@@ -17,3 +17,4 @@ Android приложение для курса *"Конструирование 
 * [Дмитриев Александр](https://github.com/BrainLUX)
 * [Столяров Алексей](https://github.com/complex-tube)
 * [Шабинский Дмитрий](https://github.com/sdimosik)
+* [Мещеряков Григорий](https://github.com/gmescheryakov)
