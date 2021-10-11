@@ -6,7 +6,7 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment(@LayoutRes contentLayoutId: Int, ) : Fragment(contentLayoutId) {
+abstract class BaseFragment(@LayoutRes contentLayoutId: Int) : Fragment(contentLayoutId) {
 
     protected abstract val binding: ViewBinding
 
