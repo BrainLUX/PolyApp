@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PolyApp</string>
+
+    <string name="menu_news">Новости</string>
+    <string name="menu_timetable">Расписание</string>
+    <string name="menu_services">Сервисы</string>
+    <string name="menu_profile">Профиль</string>
 </resources>

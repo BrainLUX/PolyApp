@@ -1,32 +1,24 @@
 package com.polytech.application.ui.main
 
-import androidx.lifecycle.ViewModelProvider
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.polytech.application.R
+import com.polytech.application.base.BaseFragment
+import com.polytech.application.databinding.FragmentMainBinding
+import com.polytech.application.extensions.viewBinding
 
-class MainFragment : Fragment() {
+class MainFragment : BaseFragment(R.layout.fragment_main) {
 
-    companion object {
-        fun newInstance() = MainFragment()
-    }
+    override val binding by viewBinding(FragmentMainBinding::bind)
 
-    private lateinit var viewModel: MainViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_main, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun setupViews() {
+        val navHost = childFragmentManager.findFragmentById(R.id.frg_main__fcv_container) as NavHostFragment
+        val navController = navHost.navController
+        binding.frgMainBnvMain.setupWithNavController(navController)
+        binding.frgMainBnvMain.setOnNavigationItemSelectedListener { item ->
+            NavigationUI.onNavDestinationSelected(item, navController)
+        }
     }
 
 }
