@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigationViewItem">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/sp_11</item>
+    </style>
+
+    <style name="RecyclerView.Default" parent="Widget.AppCompat.ListView">
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <style name="RecyclerView.Linear" parent="RecyclerView.Default">
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+</resources>
