@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="BottomNavigationViewItem">
         <item name="android:fontFamily">@font/montserrat_medium</item>
         <item name="android:textSize">@dimen/sp_11</item>
@@ -11,5 +12,30 @@
 
     <style name="RecyclerView.Linear" parent="RecyclerView.Default">
         <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="TextView.Default" parent="Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+
+    <style name="TextView.H3" parent="TextView.Default">
+        <item name="android:fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="TextView.H1" parent="TextView.Default">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/sp_22</item>
+    </style>
+
+    <style name="TextView.H1.Black" parent="TextView.H1">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextView.H2" parent="TextView.Default">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/sp_18</item>
     </style>
 </resources>

@@ -5,4 +5,6 @@
     <string name="menu_timetable">Расписание</string>
     <string name="menu_services">Сервисы</string>
     <string name="menu_profile">Профиль</string>
+
+    <string name="service_actual_title">Актуальное</string>
 </resources>
