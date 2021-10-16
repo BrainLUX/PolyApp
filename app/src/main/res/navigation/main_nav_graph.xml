@@ -6,13 +6,13 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.polytech.application.ui.main.MainFragment"
+        android:name="com.spbstu.application.ui.main.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main" />
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.polytech.application.ui.login.LoginFragment"
+        android:name="com.spbstu.application.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
 </navigation>

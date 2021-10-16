@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -9,7 +10,7 @@ android {
     buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.polytech.application"
+        applicationId "com.spbstu.application"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode versionCode
@@ -20,7 +21,6 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix '.debug'
             versionNameSuffix '-debug'
         }
         release {
@@ -77,4 +77,11 @@ dependencies {
     implementation activityKtxDep
     implementation fragmentKtxDep
     implementation coliDep
+
+    implementation platform(firebaseDep)
+    implementation firebaseAnalyticsDep
+    implementation firebaseFirestoreDep
+
+    implementation shimmerRecyclerDep
+    implementation shimmerDep
 }
