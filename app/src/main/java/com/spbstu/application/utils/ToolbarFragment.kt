@@ -10,8 +10,7 @@ import com.spbstu.application.databinding.IncludeToolbarBinding
 abstract class ToolbarFragment constructor(
     @StringRes private val titleResource: Int = 0,
     @LayoutRes contentLayoutId: Int
-) :
-    BaseFragment(contentLayoutId) {
+) : BaseFragment(contentLayoutId) {
 
     private var _layoutToolbarBinding: IncludeToolbarBinding? = null
     private val layoutToolbarBinding get() = _layoutToolbarBinding!!
