@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.polytech.application">
+    package="com.spbstu.application">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:name="com.polytech.application.app.App"
+        android:name="com.spbstu.application.app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PolyApp">
         <activity
-            android:name=".MainActivity"
+            android:name="com.spbstu.application.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">

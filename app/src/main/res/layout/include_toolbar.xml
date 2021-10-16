@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/TextView.H2"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_56"
+    android:background="@color/color_primary"
+    android:gravity="center_vertical|start"
+    android:padding="@dimen/dp_16"
+    tools:text="Новости" />

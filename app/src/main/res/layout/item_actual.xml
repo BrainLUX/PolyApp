@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/dp_0"
+    android:paddingEnd="@dimen/dp_24">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item_actual__mcv_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp_10">
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp_300"
+            android:layout_height="@dimen/dp_160">
+
+            <ImageView
+                android:id="@+id/item_actual__iv_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_placeholder"
+                android:contentDescription="@string/description_service"
+                android:foreground="@color/color_transparent"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/item_actual__tv_title"
+                style="@style/TextView.H2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/item_actual__tv_desc"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_4"
+                tools:text="Сервис" />
+
+            <TextView
+                android:id="@+id/item_actual__tv_desc"
+                style="@style/TextView.Default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_16"
+                tools:text="Описание сервиса" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

@@ -5,4 +5,11 @@
     <string name="menu_timetable">Расписание</string>
     <string name="menu_services">Сервисы</string>
     <string name="menu_profile">Профиль</string>
+
+    <string name="description_service">Сервис</string>
+
+    <string name="service_actual_title">Актуальное</string>
+    <string name="service_university_title">Университет</string>
+    <string name="service_student_title">Студенческая жизнь</string>
+    <string name="service_other_title">Разное</string>
 </resources>

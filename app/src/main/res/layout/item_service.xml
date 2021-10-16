@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/dp_0"
+    android:paddingEnd="@dimen/dp_24">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item_service__mcv_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp_10">
+
+        <FrameLayout
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_128">
+
+            <ImageView
+                android:id="@+id/item_service__iv_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_placeholder"
+                android:contentDescription="@string/description_service"
+                android:foreground="@color/color_transparent"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/item_service__tv_title"
+                    style="@style/TextView.H2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_4"
+                    tools:text="Сервис" />
+
+                <TextView
+                    android:id="@+id/item_service__tv_desc"
+                    style="@style/TextView.Default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Описание сервиса" />
+            </LinearLayout>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>
