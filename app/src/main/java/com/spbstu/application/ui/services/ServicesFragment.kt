@@ -37,23 +37,6 @@ class ServicesFragment : ToolbarFragment(R.string.menu_services, R.layout.fragme
         initAdapters()
     }
 
-    private fun initAdapters() {
-        with(binding) {
-            frgServicesRvActual.adapter = actualAdapter
-            frgServicesRvActual.setItemViewType { _, _ -> R.layout.item_actual }
-            frgServicesRvActual.showShimmer()
-            frgServicesRvStudent.adapter = studentAdapter
-            frgServicesRvStudent.setItemViewType { _, _ -> R.layout.item_service }
-            frgServicesRvStudent.showShimmer()
-            frgServicesRvUniversity.adapter = universityAdapter
-            frgServicesRvUniversity.setItemViewType { _, _ -> R.layout.item_service }
-            frgServicesRvUniversity.showShimmer()
-            frgServicesRvOther.adapter = otherAdapter
-            frgServicesRvOther.setItemViewType { _, _ -> R.layout.item_service }
-            frgServicesRvOther.showShimmer()
-        }
-    }
-
     override fun subscribe() {
         super.subscribe()
         lifecycleScope.launch {
@@ -87,6 +70,23 @@ class ServicesFragment : ToolbarFragment(R.string.menu_services, R.layout.fragme
                     binding.frgServicesRvOther.hideShimmer()
                 }
             }
+        }
+    }
+
+    private fun initAdapters() {
+        with(binding) {
+            frgServicesRvActual.adapter = actualAdapter
+            frgServicesRvActual.setItemViewType { _, _ -> R.layout.item_actual }
+            frgServicesRvActual.showShimmer()
+            frgServicesRvStudent.adapter = studentAdapter
+            frgServicesRvStudent.setItemViewType { _, _ -> R.layout.item_service }
+            frgServicesRvStudent.showShimmer()
+            frgServicesRvUniversity.adapter = universityAdapter
+            frgServicesRvUniversity.setItemViewType { _, _ -> R.layout.item_service }
+            frgServicesRvUniversity.showShimmer()
+            frgServicesRvOther.adapter = otherAdapter
+            frgServicesRvOther.setItemViewType { _, _ -> R.layout.item_service }
+            frgServicesRvOther.showShimmer()
         }
     }
 }

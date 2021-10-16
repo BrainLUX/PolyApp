@@ -8,7 +8,7 @@ import com.spbstu.application.domain.model.ServiceCategory
 import com.spbstu.application.domain.model.getCollection
 
 object FirebaseServicesApi {
-    const val ACTUAL_COLLECTION = "actual"
+    private const val ACTUAL_COLLECTION = "actual"
 
     fun getCategoryItems(serviceCategory: ServiceCategory, onItemsLoaded: (List<Service>) -> Unit) {
         Firebase.firestore.collection(serviceCategory.getCollection())

@@ -38,4 +38,13 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">@dimen/sp_18</item>
     </style>
+    <style name="Recycler.Service" parent="RecyclerView.Linear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">@dimen/dp_16</item>
+        <item name="android:paddingEnd">@dimen/dp_0</item>
+        <item name="android:layout_marginTop">@dimen/dp_16</item>
+    </style>
 </resources>
