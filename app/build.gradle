@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
     id 'com.google.gms.google-services'
 }
 
@@ -84,4 +85,6 @@ dependencies {
 
     implementation shimmerRecyclerDep
     implementation shimmerDep
+
+    implementation expandableDep
 }

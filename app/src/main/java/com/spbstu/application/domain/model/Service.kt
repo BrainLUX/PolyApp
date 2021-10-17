@@ -11,5 +11,5 @@ data class Service(
 ) : BaseModel(id) {
 
     override fun isContentEqual(other: BaseModel): Boolean =
-        other is Service && description == other.description && serviceId == other.serviceId
+        other is Service && description == other.description && serviceId == other.serviceId && background == other.background
 }

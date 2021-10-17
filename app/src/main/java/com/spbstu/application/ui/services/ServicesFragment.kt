@@ -1,10 +1,15 @@
 package com.spbstu.application.ui.services
 
+import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.spbstu.application.R
 import com.spbstu.application.databinding.FragmentServicesBinding
+import com.spbstu.application.domain.model.Service
+import com.spbstu.application.extensions.getValue
 import com.spbstu.application.extensions.viewBinding
 import com.spbstu.application.ui.services.adapter.ActualAdapter
 import com.spbstu.application.ui.services.adapter.ServiceAdapter
@@ -12,7 +17,10 @@ import com.spbstu.application.utils.ToolbarFragment
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class ServicesFragment : ToolbarFragment(R.string.menu_services, R.layout.fragment_services) {
+class ServicesFragment : ToolbarFragment(
+    titleResource = R.string.menu_services,
+    contentLayoutId = R.layout.fragment_services
+) {
 
     override val binding by viewBinding(FragmentServicesBinding::bind)
 
@@ -24,13 +32,23 @@ class ServicesFragment : ToolbarFragment(R.string.menu_services, R.layout.fragme
         ActualAdapter()
     }
     private val universityAdapter: ServiceAdapter by lazy {
-        ServiceAdapter()
+        ServiceAdapter {
+            handleServiceClick(it)
+        }
     }
     private val studentAdapter: ServiceAdapter by lazy {
-        ServiceAdapter()
+        ServiceAdapter {
+            handleServiceClick(it)
+        }
     }
     private val otherAdapter: ServiceAdapter by lazy {
-        ServiceAdapter()
+        ServiceAdapter {
+            handleServiceClick(it)
+        }
+    }
+
+    private enum class Services {
+        BUILDINGS
     }
 
     override fun setupViews() {
@@ -88,5 +106,22 @@ class ServicesFragment : ToolbarFragment(R.string.menu_services, R.layout.fragme
             frgServicesRvOther.setItemViewType { _, _ -> R.layout.item_service }
             frgServicesRvOther.showShimmer()
         }
+    }
+
+    private fun handleServiceClick(service: Service) {
+        when (service.serviceId) {
+            Services.BUILDINGS.getValue() -> {
+                findNavController().navigate(
+                    R.id.action_servicesFragment_to_buildingsFragment,
+                    makeBundle(service.title)
+                )
+            }
+        }
+    }
+
+    private fun makeBundle(title: String): Bundle = bundleOf(SERVICE_TITLE_KEY to title)
+
+    companion object {
+        const val SERVICE_TITLE_KEY = "com.spbstu.application.SERVICE_TITLE_KEY"
     }
 }

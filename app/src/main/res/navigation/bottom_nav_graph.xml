@@ -19,10 +19,37 @@
         android:id="@+id/servicesFragment"
         android:name="com.spbstu.application.ui.services.ServicesFragment"
         android:label="fragment_services"
-        tools:layout="@layout/fragment_services" />
+        tools:layout="@layout/fragment_services">
+        <action
+            android:id="@+id/action_servicesFragment_to_buildingsFragment"
+            app:destination="@id/buildingsFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+    </fragment>
     <fragment
         android:id="@+id/timetableFragment"
         android:name="com.spbstu.application.ui.timetable.TimetableFragment"
         android:label="fragment_timetable"
         tools:layout="@layout/fragment_timetable" />
+
+    <fragment
+        android:id="@+id/buildingsFragment"
+        android:name="com.spbstu.application.ui.buildings.BuildingsFragment"
+        android:label="fragment_buildings"
+        tools:layout="@layout/fragment_buildings">
+        <action
+            android:id="@+id/action_buildingsFragment_to_buildingFragment"
+            app:destination="@id/buildingFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/buildingFragment"
+        android:name="com.spbstu.application.ui.building.BuildingFragment"
+        android:label="BuildingFragment"
+        tools:layout="@layout/fragment_building" />
 </navigation>

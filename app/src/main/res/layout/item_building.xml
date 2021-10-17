@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp_16">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item_building__mcv_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp_10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_160">
+
+            <ImageView
+                android:id="@+id/item_building__iv_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_placeholder"
+                android:contentDescription="@string/description_service"
+                android:foreground="@color/color_transparent"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/item_building__tv_title"
+                style="@style/TextView.H2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_24"
+                tools:text="Сервис" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

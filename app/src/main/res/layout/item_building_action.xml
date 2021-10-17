@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_8"
+    app:cardBackgroundColor="@color/background_primary"
+    app:cardElevation="@dimen/dp_2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_building_action__tv_title"
+            style="@style/TextView.ArrowIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Как добраться?" />
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/item_building_action__el_expandable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_duration="500">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/item_building_action__tv_description"
+                    style="@style/TextView.Default.Black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/dp_24"
+                    android:paddingVertical="@dimen/dp_16"
+                    tools:text="Центральная часть кампуса Санкт-Петербургского политехнического университета Петра Великого (Политехническая ул., 29) расположена у станции метро Политехническая" />
+            </FrameLayout>
+        </net.cachapa.expandablelayout.ExpandableLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
