@@ -87,4 +87,6 @@ dependencies {
     implementation shimmerDep
 
     implementation expandableDep
+
+    implementation jsoupDep
 }

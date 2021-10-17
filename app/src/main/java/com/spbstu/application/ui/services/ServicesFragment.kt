@@ -32,7 +32,9 @@ class ServicesFragment : ToolbarFragment(
     private val viewModel: ServicesViewModel by viewModels()
 
     private val actualAdapter: ActualAdapter by lazy {
-        ActualAdapter()
+        ActualAdapter{
+            handleServiceClick(it)
+        }
     }
     private val universityAdapter: ServiceAdapter by lazy {
         ServiceAdapter {
@@ -51,7 +53,7 @@ class ServicesFragment : ToolbarFragment(
     }
 
     private enum class Services {
-        BUILDINGS, QUESTION
+        BUILDINGS, QUESTION, SUPPORT, NAVIGATION
     }
 
     override fun setupViews() {
@@ -126,6 +128,16 @@ class ServicesFragment : ToolbarFragment(
                 )
                 startActivity(intent)
             }
+            Services.SUPPORT.getValue() -> {
+                findNavController().navigate(R.id.action_servicesFragment_to_supportFragment)
+            }
+            Services.NAVIGATION.getValue() -> {
+                val intent = Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse(NAVIGATION_URL)
+                )
+                startActivity(intent)
+            }
         }
     }
 
@@ -134,5 +146,7 @@ class ServicesFragment : ToolbarFragment(
     companion object {
         const val SERVICE_TITLE_KEY = "com.spbstu.application.SERVICE_TITLE_KEY"
         const val VK_GROUP_URL = "https://vk.com/im?sel=-42184737"
+        const val NAVIGATION_URL =
+            "https://play.google.com/store/apps/details?id=com.starovoitov.polynavi"
     }
 }

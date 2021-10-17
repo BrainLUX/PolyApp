@@ -10,7 +10,8 @@ import com.spbstu.application.domain.model.Service
 import com.spbstu.application.extensions.setDebounceClickListener
 import com.spbstu.application.extensions.viewBinding
 
-class ActualAdapter : BaseAdapter<Service, ActualAdapter.ActualViewHolder>() {
+class ActualAdapter(val onClick: (Service) -> Unit) :
+    BaseAdapter<Service, ActualAdapter.ActualViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -20,12 +21,16 @@ class ActualAdapter : BaseAdapter<Service, ActualAdapter.ActualViewHolder>() {
     inner class ActualViewHolder(parent: ViewGroup) :
         BaseViewHolder<Service, ItemActualBinding>(parent.viewBinding(ItemActualBinding::inflate)) {
 
+        private lateinit var service: Service
+
         init {
             binding.itemActualMcvCard.setDebounceClickListener {
+                onClick(service)
             }
         }
 
         override fun bind(item: Service) {
+            service = item
             with(binding) {
                 itemActualTvTitle.text = item.title
                 itemActualTvDesc.text = item.description

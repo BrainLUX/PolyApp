@@ -24,7 +24,7 @@
             android:id="@+id/item_building_action__el_expandable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:el_duration="500">
+            app:el_duration="@integer/expand_anim_duration">
 
             <FrameLayout
                 android:layout_width="match_parent"

@@ -13,4 +13,9 @@
     <string name="service_university_title">Университет</string>
     <string name="service_student_title">Студенческая жизнь</string>
     <string name="service_other_title">Разное</string>
+
+    <string name="support_documents_title">Подтверждающие документы</string>
+    <string name="support_payment_title">Размер и кратность выплаты</string>
+    <string name="support_download">Скачать образец обращения</string>
+    <string name="support_hint">Поиск среди категорий</string>
 </resources>

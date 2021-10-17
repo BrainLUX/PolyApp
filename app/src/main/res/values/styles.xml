@@ -30,6 +30,14 @@
         <item name="android:textSize">@dimen/sp_14</item>
     </style>
 
+    <style name="TextView.Medium" parent="TextView.Default">
+        <item name="android:textSize">@dimen/sp_18</item>
+    </style>
+
+    <style name="TextView.Medium.Black" parent="TextView.Medium">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="TextView.Default.Black" parent="TextView.Default">
         <item name="android:textColor">@color/black</item>
     </style>
@@ -47,6 +55,10 @@
     <style name="TextView.H3" parent="TextView.Default">
         <item name="android:fontFamily">@font/montserrat_semi_bold</item>
         <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="TextView.H3.Black" parent="TextView.H3">
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="TextView.H1" parent="TextView.Default">
