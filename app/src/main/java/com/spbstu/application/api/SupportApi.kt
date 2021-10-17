@@ -24,6 +24,10 @@ object SupportApi {
                 )
             }
         onItemsLoaded(list)
+    }
 
+    fun getFileLink(onItemLoaded: (String) -> Unit) {
+        val doc = Jsoup.connect(SUPPORT_URL).get()
+        onItemLoaded(doc.selectFirst("a.t-btn").attr("href"))
     }
 }

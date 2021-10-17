@@ -10,14 +10,14 @@ import com.spbstu.application.R
 import com.spbstu.application.databinding.FragmentServicesBinding
 import com.spbstu.application.domain.model.Service
 import com.spbstu.application.extensions.getValue
+import com.spbstu.application.extensions.openLink
+import com.spbstu.application.extensions.setup
 import com.spbstu.application.extensions.viewBinding
 import com.spbstu.application.ui.services.adapter.ActualAdapter
 import com.spbstu.application.ui.services.adapter.ServiceAdapter
 import com.spbstu.application.utils.ToolbarFragment
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import android.content.Intent
-import android.net.Uri
 
 
 class ServicesFragment : ToolbarFragment(
@@ -32,7 +32,7 @@ class ServicesFragment : ToolbarFragment(
     private val viewModel: ServicesViewModel by viewModels()
 
     private val actualAdapter: ActualAdapter by lazy {
-        ActualAdapter{
+        ActualAdapter {
             handleServiceClick(it)
         }
     }
@@ -98,18 +98,10 @@ class ServicesFragment : ToolbarFragment(
 
     private fun initAdapters() {
         with(binding) {
-            frgServicesRvActual.adapter = actualAdapter
-            frgServicesRvActual.setItemViewType { _, _ -> R.layout.item_actual }
-            frgServicesRvActual.showShimmer()
-            frgServicesRvStudent.adapter = studentAdapter
-            frgServicesRvStudent.setItemViewType { _, _ -> R.layout.item_service }
-            frgServicesRvStudent.showShimmer()
-            frgServicesRvUniversity.adapter = universityAdapter
-            frgServicesRvUniversity.setItemViewType { _, _ -> R.layout.item_service }
-            frgServicesRvUniversity.showShimmer()
-            frgServicesRvOther.adapter = otherAdapter
-            frgServicesRvOther.setItemViewType { _, _ -> R.layout.item_service }
-            frgServicesRvOther.showShimmer()
+            frgServicesRvActual.setup(actualAdapter, R.layout.item_actual)
+            frgServicesRvStudent.setup(studentAdapter, R.layout.item_service)
+            frgServicesRvUniversity.setup(universityAdapter, R.layout.item_service)
+            frgServicesRvOther.setup(otherAdapter, R.layout.item_service)
         }
     }
 
@@ -122,21 +114,13 @@ class ServicesFragment : ToolbarFragment(
                 )
             }
             Services.QUESTION.getValue() -> {
-                val intent = Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse(VK_GROUP_URL)
-                )
-                startActivity(intent)
+                requireContext().openLink(getString(R.string.link_vk))
             }
             Services.SUPPORT.getValue() -> {
                 findNavController().navigate(R.id.action_servicesFragment_to_supportFragment)
             }
             Services.NAVIGATION.getValue() -> {
-                val intent = Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse(NAVIGATION_URL)
-                )
-                startActivity(intent)
+                requireContext().openLink(getString(R.string.link_navigation))
             }
         }
     }
@@ -145,8 +129,5 @@ class ServicesFragment : ToolbarFragment(
 
     companion object {
         const val SERVICE_TITLE_KEY = "com.spbstu.application.SERVICE_TITLE_KEY"
-        const val VK_GROUP_URL = "https://vk.com/im?sel=-42184737"
-        const val NAVIGATION_URL =
-            "https://play.google.com/store/apps/details?id=com.starovoitov.polynavi"
     }
 }

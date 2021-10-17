@@ -9,6 +9,7 @@ import com.spbstu.application.base.BaseFragment
 import com.spbstu.application.databinding.FragmentSupportBinding
 import com.spbstu.application.dialogs.createSupportDialog
 import com.spbstu.application.extensions.setDebounceClickListener
+import com.spbstu.application.extensions.setup
 import com.spbstu.application.extensions.viewBinding
 import com.spbstu.application.ui.support.adapter.SupportAdapter
 import kotlinx.coroutines.flow.collect
@@ -22,8 +23,10 @@ class SupportFragment : BaseFragment(contentLayoutId = R.layout.fragment_support
     private val viewModel: SupportViewModel by viewModels()
 
     private val supportAdapter: SupportAdapter by lazy {
-        SupportAdapter {
-            requireContext().createSupportDialog(it).show()
+        SupportAdapter { support ->
+            viewModel.fileLink?.let {
+                requireContext().createSupportDialog(support, it).show()
+            }
         }
     }
 
@@ -46,9 +49,7 @@ class SupportFragment : BaseFragment(contentLayoutId = R.layout.fragment_support
 
     private fun initAdapters() {
         with(binding) {
-            frgSupportRvList.adapter = supportAdapter
-            frgSupportRvList.setItemViewType { _, _ -> R.layout.shimmer_support }
-            frgSupportRvList.showShimmer()
+            frgSupportRvList.setup(supportAdapter, R.layout.shimmer_support)
         }
     }
 

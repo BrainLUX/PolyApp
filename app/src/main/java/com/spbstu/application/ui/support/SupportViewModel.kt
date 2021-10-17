@@ -14,10 +14,15 @@ class SupportViewModel : BaseViewModel() {
     private val _supportData: MutableStateFlow<List<Support>> = MutableStateFlow(listOf())
     val supportData get() :StateFlow<List<Support>> = _supportData
 
+    var fileLink: String? = null
+
     init {
         viewModelScope.launch(Dispatchers.IO) {
             SupportApi.getSupportList {
                 _supportData.value = it
+            }
+            SupportApi.getFileLink {
+                fileLink = it
             }
         }
     }

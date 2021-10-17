@@ -11,7 +11,7 @@
             app:touchAnchorId="@+id/frg_building__nsv_scroll"
             app:touchAnchorSide="top" />
     </Transition>
-    <ConstraintSet android:id="@+id/start"></ConstraintSet>
+    <ConstraintSet android:id="@+id/start" />
 
     <ConstraintSet android:id="@+id/end">
         <Constraint

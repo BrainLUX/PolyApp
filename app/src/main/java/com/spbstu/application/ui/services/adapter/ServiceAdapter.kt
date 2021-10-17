@@ -33,7 +33,7 @@ class ServiceAdapter(val onClick: (Service) -> Unit) :
             service = item
             with(binding) {
                 itemServiceTvTitle.text = item.title
-                itemServiceTvDesc.text = item.description
+                itemServiceTvDescription.text = item.description
                 itemServiceIvBackground.load(item.background) {
                     crossfade(true)
                     placeholder(R.drawable.background_placeholder)

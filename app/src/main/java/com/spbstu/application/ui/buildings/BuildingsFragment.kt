@@ -6,6 +6,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.spbstu.application.R
 import com.spbstu.application.databinding.FragmentBuildingsBinding
+import com.spbstu.application.extensions.setup
 import com.spbstu.application.extensions.viewBinding
 import com.spbstu.application.ui.building.BuildingFragment
 import com.spbstu.application.ui.buildings.adapter.BuildingAdapter
@@ -47,14 +48,11 @@ class BuildingsFragment :
                 }
             }
         }
-
     }
 
     private fun initAdapters() {
         with(binding) {
-            frgBuildingsRvList.adapter = buildingAdapter
-            frgBuildingsRvList.setItemViewType { _, _ -> R.layout.item_building }
-            frgBuildingsRvList.showShimmer()
+            frgBuildingsRvList.setup(buildingAdapter, R.layout.item_building)
         }
     }
 

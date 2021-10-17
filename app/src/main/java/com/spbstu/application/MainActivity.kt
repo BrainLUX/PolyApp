@@ -8,6 +8,7 @@ import com.spbstu.application.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var isAttached = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,10 +22,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initNavigation() {
-        val navController = findNavController(R.id.navHost)
+        if (!isAttached) {
+            val navController = findNavController(R.id.navHost)
 
-        val navInflater = navController.navInflater
-        val mainGraph = navInflater.inflate(R.navigation.main_nav_graph)
-        navController.graph = mainGraph
+            val navInflater = navController.navInflater
+            val mainGraph = navInflater.inflate(R.navigation.main_nav_graph)
+            navController.graph = mainGraph
+            isAttached = true
+        }
     }
 }
