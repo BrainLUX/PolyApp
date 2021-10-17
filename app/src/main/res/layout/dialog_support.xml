@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dg_support__rl_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88000000"
+    android:gravity="top|center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dp_24">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dg_support__cv_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/background_primary"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:cardElevation="@dimen/dp_0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextView.H3.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_16"
+                android:text="@string/support_documents_title" />
+
+            <TextView
+                android:id="@+id/dg_support__tv_documents"
+                style="@style/TextView.Default.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dp_24"
+                tools:text="@string/support_documents_title" />
+
+            <TextView
+                style="@style/TextView.H3.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_16"
+                android:text="@string/support_payment_title" />
+
+            <TextView
+                android:id="@+id/dg_support__tv_payment"
+                style="@style/TextView.Default.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dp_24"
+                tools:text="@string/support_documents_title" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/dg_support__mb_download"
+                style="@style/Button.Default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_32"
+                android:text="@string/support_download" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

@@ -44,7 +44,7 @@
                     tools:text="Сервис" />
 
                 <TextView
-                    android:id="@+id/item_service__tv_desc"
+                    android:id="@+id/item_service__tv_description"
                     style="@style/TextView.Default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

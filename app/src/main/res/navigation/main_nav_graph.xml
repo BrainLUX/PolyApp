@@ -8,11 +8,17 @@
         android:id="@+id/mainFragment"
         android:name="com.spbstu.application.ui.main.MainFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+    </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.spbstu.application.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/buildingsFragment"
+        android:name="com.spbstu.application.ui.buildings.BuildingsFragment"
+        android:label="BuildingsFragment"
+        tools:layout="@layout/fragment_buildings" />
 </navigation>

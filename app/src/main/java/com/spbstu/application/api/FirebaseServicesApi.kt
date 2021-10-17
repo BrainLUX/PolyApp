@@ -5,13 +5,13 @@ import com.google.firebase.ktx.Firebase
 import com.spbstu.application.domain.model.ActualService
 import com.spbstu.application.domain.model.Service
 import com.spbstu.application.domain.model.ServiceCategory
-import com.spbstu.application.domain.model.getCollection
+import com.spbstu.application.extensions.getValue
 
 object FirebaseServicesApi {
     private const val ACTUAL_COLLECTION = "actual"
 
     fun getCategoryItems(serviceCategory: ServiceCategory, onItemsLoaded: (List<Service>) -> Unit) {
-        Firebase.firestore.collection(serviceCategory.getCollection())
+        Firebase.firestore.collection(serviceCategory.getValue())
             .get()
             .addOnSuccessListener { snapshot ->
                 val list = mutableListOf<Service>()

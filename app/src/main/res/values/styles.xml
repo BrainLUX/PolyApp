@@ -8,10 +8,20 @@
 
     <style name="RecyclerView.Default" parent="Widget.AppCompat.ListView">
         <item name="android:overScrollMode">never</item>
+        <item name="android:clipToPadding">false</item>
     </style>
 
     <style name="RecyclerView.Linear" parent="RecyclerView.Default">
         <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="Recycler.Service" parent="RecyclerView.Linear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">@dimen/dp_16</item>
+        <item name="android:paddingEnd">@dimen/dp_0</item>
+        <item name="android:layout_marginTop">@dimen/dp_16</item>
     </style>
 
     <style name="TextView.Default" parent="Widget.MaterialComponents.TextView">
@@ -20,9 +30,35 @@
         <item name="android:textSize">@dimen/sp_14</item>
     </style>
 
+    <style name="TextView.Medium" parent="TextView.Default">
+        <item name="android:textSize">@dimen/sp_18</item>
+    </style>
+
+    <style name="TextView.Medium.Black" parent="TextView.Medium">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextView.Default.Black" parent="TextView.Default">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextView.ArrowIcon" parent="TextView.H3">
+        <item name="drawableEndCompat">@drawable/ic_arrow_right_24</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/dp_16</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:textColor">@color/text_color_secondary</item>
+    </style>
+
     <style name="TextView.H3" parent="TextView.Default">
         <item name="android:fontFamily">@font/montserrat_semi_bold</item>
         <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="TextView.H3.Black" parent="TextView.H3">
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="TextView.H1" parent="TextView.Default">
@@ -38,13 +74,20 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">@dimen/sp_18</item>
     </style>
-    <style name="Recycler.Service" parent="RecyclerView.Linear">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:clipToPadding">false</item>
-        <item name="android:orientation">horizontal</item>
-        <item name="android:paddingStart">@dimen/dp_16</item>
-        <item name="android:paddingEnd">@dimen/dp_0</item>
-        <item name="android:layout_marginTop">@dimen/dp_16</item>
+
+    <style name="Button.Default" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetTop">@dimen/dp_0</item>
+        <item name="android:insetLeft">@dimen/dp_0</item>
+        <item name="android:insetRight">@dimen/dp_0</item>
+        <item name="android:insetBottom">@dimen/dp_0</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:padding">@dimen/dp_16</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:outlineProvider">none</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
+        <item name="android:minWidth">@dimen/dp_0</item>
+        <item name="android:minHeight">@dimen/dp_0</item>
+        <item name="iconGravity">end</item>
     </style>
 </resources>

@@ -5,5 +5,3 @@ enum class ServiceCategory {
     STUDENT,
     OTHER
 }
-
-fun ServiceCategory.getCollection(): String = toString().lowercase()

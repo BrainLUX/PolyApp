@@ -42,6 +42,10 @@ buildscript {
         shimmerVersion = '0.5.0'
         shimmerRecyclerVersion = '0.4.1'
 
+        expandableVersion = "2.9.2"
+
+        jsoupVersion = "1.11.3"
+
         kotlinDep = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
         androidxCoreDep = "androidx.core:core-ktx:$coreVersion"
         androidDep = "androidx.appcompat:appcompat:$supportVersion"
@@ -89,6 +93,9 @@ buildscript {
 
         shimmerDep = "com.facebook.shimmer:shimmer:$shimmerVersion"
         shimmerRecyclerDep = "com.todkars:shimmer-recyclerview:$shimmerRecyclerVersion"
+
+        expandableDep = "com.github.cachapa:ExpandableLayout:$expandableVersion"
+        jsoupDep = "org.jsoup:jsoup:$jsoupVersion"
 
     }
     repositories {

@@ -7,9 +7,20 @@
     <string name="menu_profile">Профиль</string>
 
     <string name="description_service">Сервис</string>
+    <string name="description_back">Назад</string>
+    <string name="description_building">Фото здания</string>
 
     <string name="service_actual_title">Актуальное</string>
     <string name="service_university_title">Университет</string>
     <string name="service_student_title">Студенческая жизнь</string>
     <string name="service_other_title">Разное</string>
+
+    <string name="link_map">yandexmaps://maps.yandex.ru/?ll=30.372359,60.007368&amp;z=10&amp;text=%s</string>
+    <string name="link_vk">https://vk.com/im?sel=-42184737</string>
+    <string name="link_navigation">https://play.google.com/store/apps/details?id=com.starovoitov.polynavi</string>
+
+    <string name="support_documents_title">Подтверждающие документы</string>
+    <string name="support_payment_title">Размер и кратность выплаты</string>
+    <string name="support_download">Скачать образец обращения</string>
+    <string name="support_hint">Поиск среди категорий</string>
 </resources>
