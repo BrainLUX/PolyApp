@@ -16,6 +16,9 @@ import com.spbstu.application.ui.services.adapter.ServiceAdapter
 import com.spbstu.application.utils.ToolbarFragment
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import android.content.Intent
+import android.net.Uri
+
 
 class ServicesFragment : ToolbarFragment(
     titleResource = R.string.menu_services,
@@ -48,7 +51,7 @@ class ServicesFragment : ToolbarFragment(
     }
 
     private enum class Services {
-        BUILDINGS
+        BUILDINGS, QUESTION
     }
 
     override fun setupViews() {
@@ -116,6 +119,13 @@ class ServicesFragment : ToolbarFragment(
                     makeBundle(service.title)
                 )
             }
+            Services.QUESTION.getValue() -> {
+                val intent = Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse(VK_GROUP_URL)
+                )
+                startActivity(intent)
+            }
         }
     }
 
@@ -123,5 +133,6 @@ class ServicesFragment : ToolbarFragment(
 
     companion object {
         const val SERVICE_TITLE_KEY = "com.spbstu.application.SERVICE_TITLE_KEY"
+        const val VK_GROUP_URL = "https://vk.com/im?sel=-42184737"
     }
 }
