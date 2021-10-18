@@ -41,6 +41,13 @@
             app:exitAnim="@anim/close_fragment_slide_left"
             app:popEnterAnim="@anim/open_fragment_slide_left"
             app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_servicesFragment_to_careersFragment"
+            app:destination="@id/careersFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -101,4 +108,9 @@
         android:name="com.spbstu.application.ui.help_add.HelpAddFragment"
         android:label="HelpAddFragment"
         tools:layout="@layout/fragment_help_add" />
+    <fragment
+        android:id="@+id/careersFragment"
+        android:name="com.spbstu.application.ui.careers.CareersFragment"
+        android:label="CareersFragment"
+        tools:layout="@layout/fragment_careers" />
 </navigation>
