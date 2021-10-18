@@ -11,5 +11,4 @@ class NewsFragment : BaseFragment(R.layout.fragment_news) {
     override val binding by viewBinding(FragmentNewsBinding::bind)
 
     private val viewModel: NewsViewModel by viewModels()
-
 }

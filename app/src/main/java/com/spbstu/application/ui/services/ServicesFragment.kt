@@ -53,7 +53,7 @@ class ServicesFragment : ToolbarFragment(
     }
 
     private enum class Services {
-        BUILDINGS, QUESTION, SUPPORT, NAVIGATION
+        BUILDINGS, QUESTION, SUPPORT, NAVIGATION, HELP, CAREERS, CLUBS, EVENTS
     }
 
     override fun setupViews() {
@@ -121,6 +121,30 @@ class ServicesFragment : ToolbarFragment(
             }
             Services.NAVIGATION.getValue() -> {
                 requireContext().openLink(getString(R.string.link_navigation))
+            }
+            Services.HELP.getValue() -> {
+                findNavController().navigate(
+                    R.id.action_servicesFragment_to_helpFragment,
+                    makeBundle(service.title)
+                )
+            }
+            Services.CAREERS.getValue() -> {
+                findNavController().navigate(
+                    R.id.action_servicesFragment_to_careersFragment,
+                    makeBundle(service.title)
+                )
+            }
+            Services.CLUBS.getValue() -> {
+                findNavController().navigate(
+                    R.id.action_servicesFragment_to_clubsFragment,
+                    makeBundle(service.title)
+                )
+            }
+            Services.EVENTS.getValue() -> {
+                findNavController().navigate(
+                    R.id.action_servicesFragment_to_eventsFragment,
+                    makeBundle(service.title)
+                )
             }
         }
     }

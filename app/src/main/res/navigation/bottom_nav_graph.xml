@@ -34,6 +34,34 @@
             app:exitAnim="@anim/close_fragment_slide_left"
             app:popEnterAnim="@anim/open_fragment_slide_left"
             app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_servicesFragment_to_helpFragment"
+            app:destination="@id/helpFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_servicesFragment_to_careersFragment"
+            app:destination="@id/careersFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_servicesFragment_to_clubsFragment"
+            app:destination="@id/clubsFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_servicesFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -64,4 +92,62 @@
         android:name="com.spbstu.application.ui.support.SupportFragment"
         android:label="SupportFragment"
         tools:layout="@layout/fragment_support" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.spbstu.application.ui.help.HelpFragment"
+        android:label="HelpFragment"
+        tools:layout="@layout/fragment_help">
+        <action
+            android:id="@+id/action_helpFragment_to_helpInfoFragment"
+            app:destination="@id/helpInfoFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_helpFragment_to_helpAddFragment"
+            app:destination="@id/helpAddFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpInfoFragment"
+        android:name="com.spbstu.application.ui.help_info.HelpInfoFragment"
+        android:label="HelpInfoFragment"
+        tools:layout="@layout/fragment_help_info" />
+    <fragment
+        android:id="@+id/helpAddFragment"
+        android:name="com.spbstu.application.ui.help_add.HelpAddFragment"
+        android:label="HelpAddFragment"
+        tools:layout="@layout/fragment_help_add" />
+    <fragment
+        android:id="@+id/careersFragment"
+        android:name="com.spbstu.application.ui.careers.CareersFragment"
+        android:label="CareersFragment"
+        tools:layout="@layout/fragment_careers" />
+    <fragment
+        android:id="@+id/clubsFragment"
+        android:name="com.spbstu.application.ui.clubs.ClubsFragment"
+        android:label="ClubsFragment"
+        tools:layout="@layout/fragment_clubs" />
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.spbstu.application.ui.events.EventsFragment"
+        android:label="EventsFragment"
+        tools:layout="@layout/fragment_events">
+        <action
+            android:id="@+id/action_eventsFragment_to_eventInfoFragment"
+            app:destination="@id/eventInfoFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventInfoFragment"
+        android:name="com.spbstu.application.ui.event_info.EventInfoFragment"
+        android:label="EventInfoFragment"
+        tools:layout="@layout/fragment_event_info" />
 </navigation>

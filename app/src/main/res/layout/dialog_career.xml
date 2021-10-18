@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dg_support__rl_parent"
+    android:id="@+id/dg_career__rl_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#88000000"
@@ -11,7 +11,7 @@
     android:paddingHorizontal="@dimen/dp_24">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/dg_support__cv_card"
+        android:id="@+id/dg_career__cv_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -30,39 +30,23 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="@dimen/dp_16"
-                android:text="@string/support_documents_title" />
+                android:text="@string/career_title" />
 
             <TextView
-                android:id="@+id/dg_support__tv_documents"
+                android:id="@+id/dg_career__tv_description"
                 style="@style/TextView.Default.Black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/dp_24"
-                tools:text="@string/support_documents_title" />
-
-            <TextView
-                style="@style/TextView.H3.Black"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="@dimen/dp_16"
-                android:text="@string/support_payment_title" />
-
-            <TextView
-                android:id="@+id/dg_support__tv_payment"
-                style="@style/TextView.Default.Black"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/dp_24"
-                tools:text="@string/support_documents_title" />
+                android:paddingBottom="@dimen/dp_32"
+                tools:text="@string/career_title" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/dg_support__mb_download"
+                android:id="@+id/dg_career__mb_link"
                 style="@style/Button.Default"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_32"
-                android:text="@string/support_download" />
+                android:text="@string/career_link" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

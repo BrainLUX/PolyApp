@@ -23,4 +23,37 @@
     <string name="support_payment_title">Размер и кратность выплаты</string>
     <string name="support_download">Скачать образец обращения</string>
     <string name="support_hint">Поиск среди категорий</string>
+
+    <string name="help_address">Размещено в %s</string>
+    <string name="help_button">Откликнуться</string>
+    <string name="help_info_title">Информация о просьбе</string>
+    <string name="help_add_title">Создать новую просьбу</string>
+    <string name="help_add_button">Создать новую просьбу</string>
+    <string name="help_add_choose_tags">Выберите теги</string>
+    <array name="help_tags">
+        <item>Учёба</item>
+        <item>Спорт</item>
+        <item>Киберспорт</item>
+        <item>Помощь</item>
+        <item>Срочно</item>
+        <item>Документы</item>
+        <item>Развлечения</item>
+        <item>Досуг</item>
+        <item>Разное</item>
+        <item>Реквизит</item>
+        <item>Мероприятия</item>
+        <item>Еда</item>
+    </array>
+    <string name="help_add_title_hint">Как бы Вы назвали просьбу?</string>
+    <string name="help_add_desc_hint">Как бы Вы описали просьбу?</string>
+    <string name="help_add_link_hint">Как у Вас ID вконтакте</string>
+    <string name="help_add_input_error">Поле не может быть пустым</string>
+
+    <string name="career_title">Информация о стажировке</string>
+    <string name="career_link">Перейти на сайт</string>
+
+    <string name="club_title">Информация о клубе</string>
+    <string name="club_links">Ссылки в соц. сетях</string>
+
+    <string name="event_info_title">Информация о мероприятии</string>
 </resources>
