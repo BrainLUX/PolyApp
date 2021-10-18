@@ -54,4 +54,6 @@
 
     <string name="club_title">Информация о клубе</string>
     <string name="club_links">Ссылки в соц. сетях</string>
+
+    <string name="event_info_title">Информация о мероприятии</string>
 </resources>

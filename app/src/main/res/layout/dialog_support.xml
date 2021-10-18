@@ -15,14 +15,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="@color/background_primary"
+        app:cardBackgroundColor="@color/background_primary"
         app:cardCornerRadius="@dimen/dp_10"
         app:cardElevation="@dimen/dp_0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
             android:orientation="vertical">
 
             <TextView

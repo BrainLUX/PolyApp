@@ -55,6 +55,13 @@
             app:exitAnim="@anim/close_fragment_slide_left"
             app:popEnterAnim="@anim/open_fragment_slide_left"
             app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_servicesFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -125,4 +132,22 @@
         android:name="com.spbstu.application.ui.clubs.ClubsFragment"
         android:label="ClubsFragment"
         tools:layout="@layout/fragment_clubs" />
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.spbstu.application.ui.events.EventsFragment"
+        android:label="EventsFragment"
+        tools:layout="@layout/fragment_events">
+        <action
+            android:id="@+id/action_eventsFragment_to_eventInfoFragment"
+            app:destination="@id/eventInfoFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventInfoFragment"
+        android:name="com.spbstu.application.ui.event_info.EventInfoFragment"
+        android:label="EventInfoFragment"
+        tools:layout="@layout/fragment_event_info" />
 </navigation>
