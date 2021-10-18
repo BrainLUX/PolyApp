@@ -16,7 +16,6 @@
         android:layout_height="wrap_content"
         android:layout_toStartOf="@id/item_help__iv_arrow"
         android:ellipsize="end"
-        android:lines="1"
         tools:text="Текст помощи" />
 
     <TextView

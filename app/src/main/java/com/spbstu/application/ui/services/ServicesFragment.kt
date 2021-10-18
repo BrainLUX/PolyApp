@@ -53,7 +53,7 @@ class ServicesFragment : ToolbarFragment(
     }
 
     private enum class Services {
-        BUILDINGS, QUESTION, SUPPORT, NAVIGATION, HELP, CAREERS
+        BUILDINGS, QUESTION, SUPPORT, NAVIGATION, HELP, CAREERS, CLUBS
     }
 
     override fun setupViews() {
@@ -131,6 +131,13 @@ class ServicesFragment : ToolbarFragment(
             Services.CAREERS.getValue() -> {
                 findNavController().navigate(
                     R.id.action_servicesFragment_to_careersFragment,
+                    makeBundle(service.title)
+                )
+            }
+
+            Services.CLUBS.getValue() -> {
+                findNavController().navigate(
+                    R.id.action_servicesFragment_to_clubsFragment,
                     makeBundle(service.title)
                 )
             }

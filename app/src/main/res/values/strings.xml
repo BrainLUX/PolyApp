@@ -51,4 +51,7 @@
 
     <string name="career_title">Информация о стажировке</string>
     <string name="career_link">Перейти на сайт</string>
+
+    <string name="club_title">Информация о клубе</string>
+    <string name="club_links">Ссылки в соц. сетях</string>
 </resources>

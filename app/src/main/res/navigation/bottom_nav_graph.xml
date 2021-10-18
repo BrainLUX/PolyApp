@@ -48,6 +48,13 @@
             app:exitAnim="@anim/close_fragment_slide_left"
             app:popEnterAnim="@anim/open_fragment_slide_left"
             app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_servicesFragment_to_clubsFragment"
+            app:destination="@id/clubsFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -113,4 +120,9 @@
         android:name="com.spbstu.application.ui.careers.CareersFragment"
         android:label="CareersFragment"
         tools:layout="@layout/fragment_careers" />
+    <fragment
+        android:id="@+id/clubsFragment"
+        android:name="com.spbstu.application.ui.clubs.ClubsFragment"
+        android:label="ClubsFragment"
+        tools:layout="@layout/fragment_clubs" />
 </navigation>

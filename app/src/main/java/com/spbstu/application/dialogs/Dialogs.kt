@@ -9,11 +9,15 @@ import android.view.Window
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.os.bundleOf
+import androidx.recyclerview.widget.RecyclerView
 import com.spbstu.application.R
 import com.spbstu.application.domain.model.Career
+import com.spbstu.application.domain.model.Club
 import com.spbstu.application.domain.model.Support
+import com.spbstu.application.extensions.openLink
 import com.spbstu.application.extensions.setDebounceClickListener
 import com.spbstu.application.extensions.toHtml
+import com.spbstu.application.ui.clubs.adapter.ClubLinksAdapter
 
 
 fun Context.createSupportDialog(support: Support, link: String): Dialog {
@@ -47,6 +51,22 @@ fun Context.createCareerDialog(career: Career): Dialog {
             button.visibility = View.GONE
         }
         findViewById<View>(R.id.dg_career__rl_parent).setDebounceClickListener {
+            dismiss()
+        }
+    }
+}
+
+fun Context.createClubDialog(club: Club): Dialog {
+    return Dialog(this, android.R.style.Theme_Translucent).apply {
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        setContentView(R.layout.dialog_club)
+        findViewById<TextView>(R.id.dg_club__tv_description).text = club.description
+        val adapter = ClubLinksAdapter {
+            context.openLink(it.link)
+        }
+        adapter.bindData(club.links)
+        findViewById<RecyclerView>(R.id.dg_club__rv_list).adapter = adapter
+        findViewById<View>(R.id.dg_club__rl_parent).setDebounceClickListener {
             dismiss()
         }
     }

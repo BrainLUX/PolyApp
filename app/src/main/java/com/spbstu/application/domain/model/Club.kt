@@ -5,32 +5,30 @@ import kotlinx.parcelize.Parcelize
 import android.os.Parcelable
 
 @Parcelize
-data class Help(
+data class Club(
     override var id: Long = 0,
-    var helpId: String = "",
     val title: String = "",
-    val createdAt: Long = 0,
-    val createdBy: String = "",
+    val type: String = "",
     val description: String = "",
     var tagList: List<Tag> = listOf(),
-    val link: String = ""
+    val links: List<Link> = listOf(),
 ) : BaseModel(id), Parcelable {
 
     override fun isContentEqual(other: BaseModel): Boolean =
-        other is Help && helpId == other.helpId
-                && title == other.title
-                && createdAt == other.createdAt
-                && createdBy == other.createdBy
+        other is Club && title == other.title
+                && type == other.type
                 && description == other.description
                 && tagList == other.tagList
-                && link == other.link
+                && links == other.links
 
-    data class FirebaseEntity(
+    @Parcelize
+    data class Link(
+        override var id: Long = 0,
         val title: String = "",
-        val createdAt: Long = 0,
-        val createdBy: String = "",
-        val description: String = "",
-        var tags: List<String> = listOf(),
         val link: String = ""
-    )
+    ) : BaseModel(id), Parcelable {
+
+        override fun isContentEqual(other: BaseModel): Boolean =
+            other is Link && title == other.title && link == other.link
+    }
 }

@@ -28,10 +28,13 @@ class HelpAdapter(private val onClick: (Help) -> Unit) :
         private val adapter by lazy { HelpTagAdapter() }
 
         init {
-            binding.root.setDebounceClickListener {
-                onClick(help)
+            with(binding) {
+                root.setDebounceClickListener {
+                    onClick(help)
+                }
+                itemHelpRvTags.adapter = adapter
+                itemHelpTvTitle.setLines(1)
             }
-            binding.itemHelpRvTags.adapter = adapter
         }
 
         override fun bind(item: Help) {

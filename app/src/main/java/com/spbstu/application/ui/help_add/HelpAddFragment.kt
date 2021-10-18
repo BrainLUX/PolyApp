@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.dboy.chips.ChipsLayoutManager
 import com.spbstu.application.R
 import com.spbstu.application.databinding.FragmentHelpAddBinding
-import com.spbstu.application.domain.model.Help
+import com.spbstu.application.domain.model.Tag
 import com.spbstu.application.extensions.*
 import com.spbstu.application.ui.help.adapter.HelpTagAdapter
 import com.spbstu.application.utils.ToolbarFragment
@@ -105,7 +105,7 @@ class HelpAddFragment :
     private fun initAdapters() {
         with(binding) {
             viewModel.setTags(resources.getStringArray(R.array.help_tags)
-                .mapIndexed { index, s -> Help.Tag(index.toLong(), s) })
+                .mapIndexed { index, s -> Tag(index.toLong(), s) })
             frgHelpInfoRvTags.adapter = helpTagAdapter
             frgHelpInfoRvTags.layoutManager =
                 ChipsLayoutManager.newBuilder(requireContext()).setScrollingEnabled(false)

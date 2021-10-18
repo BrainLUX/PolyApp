@@ -6,12 +6,12 @@ import com.spbstu.application.R
 import com.spbstu.application.base.BaseAdapter
 import com.spbstu.application.base.BaseViewHolder
 import com.spbstu.application.databinding.ItemHelpTagBinding
-import com.spbstu.application.domain.model.Help
+import com.spbstu.application.domain.model.Tag
 import com.spbstu.application.extensions.setDebounceClickListener
 import com.spbstu.application.extensions.viewBinding
 
-class HelpTagAdapter(private val onClick: ((Help.Tag) -> Unit)? = null) :
-    BaseAdapter<Help.Tag, HelpTagAdapter.HelpTagViewHolder>() {
+class HelpTagAdapter(private val onClick: ((Tag) -> Unit)? = null) :
+    BaseAdapter<Tag, HelpTagAdapter.HelpTagViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -19,9 +19,9 @@ class HelpTagAdapter(private val onClick: ((Help.Tag) -> Unit)? = null) :
     ): HelpTagViewHolder = HelpTagViewHolder(parent)
 
     inner class HelpTagViewHolder(parent: ViewGroup) :
-        BaseViewHolder<Help.Tag, ItemHelpTagBinding>(parent.viewBinding(ItemHelpTagBinding::inflate)) {
+        BaseViewHolder<Tag, ItemHelpTagBinding>(parent.viewBinding(ItemHelpTagBinding::inflate)) {
 
-        private lateinit var tag: Help.Tag
+        private lateinit var tag: Tag
 
         init {
             binding.itemHelpTagMcvCard.setDebounceClickListener {
@@ -29,7 +29,7 @@ class HelpTagAdapter(private val onClick: ((Help.Tag) -> Unit)? = null) :
             }
         }
 
-        override fun bind(item: Help.Tag) {
+        override fun bind(item: Tag) {
             tag = item
             with(binding) {
                 itemHelpTagTvText.text = item.title

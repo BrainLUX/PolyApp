@@ -1,8 +1,10 @@
 package com.spbstu.application.ui.help_info
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import androidx.core.os.bundleOf
+import com.dboy.chips.ChipsLayoutManager
 import com.spbstu.application.R
 import com.spbstu.application.databinding.FragmentHelpInfoBinding
 import com.spbstu.application.domain.model.Help
@@ -35,6 +37,10 @@ class HelpInfoFragment :
     private fun initAdapters() {
         with(binding) {
             frgHelpInfoRvTags.adapter = helpTagAdapter
+            frgHelpInfoRvTags.layoutManager =
+                ChipsLayoutManager.newBuilder(requireContext()).setScrollingEnabled(false)
+                    .setChildGravity(Gravity.CENTER).setOrientation(ChipsLayoutManager.HORIZONTAL)
+                    .build()
         }
     }
 
