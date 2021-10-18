@@ -53,7 +53,7 @@ class ServicesFragment : ToolbarFragment(
     }
 
     private enum class Services {
-        BUILDINGS, QUESTION, SUPPORT, NAVIGATION
+        BUILDINGS, QUESTION, SUPPORT, NAVIGATION, HELP
     }
 
     override fun setupViews() {
@@ -121,6 +121,12 @@ class ServicesFragment : ToolbarFragment(
             }
             Services.NAVIGATION.getValue() -> {
                 requireContext().openLink(getString(R.string.link_navigation))
+            }
+            Services.HELP.getValue() -> {
+                findNavController().navigate(
+                    R.id.action_servicesFragment_to_helpFragment,
+                    makeBundle(service.title)
+                )
             }
         }
     }

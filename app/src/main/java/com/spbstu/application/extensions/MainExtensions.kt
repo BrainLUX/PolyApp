@@ -20,3 +20,10 @@ fun Context.openLink(link: String) {
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
     startActivity(intent)
 }
+
+fun Int.withLeadingZero(): String {
+    val strVal = toString()
+    return if (strVal.length == 1) {
+        "0$strVal"
+    } else strVal
+}

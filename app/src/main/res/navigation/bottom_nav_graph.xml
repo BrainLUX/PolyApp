@@ -34,6 +34,13 @@
             app:exitAnim="@anim/close_fragment_slide_left"
             app:popEnterAnim="@anim/open_fragment_slide_left"
             app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_servicesFragment_to_helpFragment"
+            app:destination="@id/helpFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -64,4 +71,22 @@
         android:name="com.spbstu.application.ui.support.SupportFragment"
         android:label="SupportFragment"
         tools:layout="@layout/fragment_support" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.spbstu.application.ui.help.HelpFragment"
+        android:label="HelpFragment"
+        tools:layout="@layout/fragment_help">
+        <action
+            android:id="@+id/action_helpFragment_to_helpInfoFragment"
+            app:destination="@id/helpInfoFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpInfoFragment"
+        android:name="com.spbstu.application.ui.help_info.HelpInfoFragment"
+        android:label="HelpInfoFragment"
+        tools:layout="@layout/fragment_help_info" />
 </navigation>

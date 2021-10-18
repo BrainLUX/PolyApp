@@ -23,4 +23,8 @@
     <string name="support_payment_title">Размер и кратность выплаты</string>
     <string name="support_download">Скачать образец обращения</string>
     <string name="support_hint">Поиск среди категорий</string>
+
+    <string name="help_address">Размещено в %s</string>
+    <string name="help_button">Откликнуться</string>
+    <string name="help_info_title">Информация о просьбе</string>
 </resources>
