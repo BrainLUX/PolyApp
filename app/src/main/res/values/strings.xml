@@ -56,4 +56,6 @@
     <string name="club_links">Ссылки в соц. сетях</string>
 
     <string name="event_info_title">Информация о мероприятии</string>
+
+    <string name="error_network">Подключение к интернету отсутствует, попробуйте позднее.</string>
 </resources>

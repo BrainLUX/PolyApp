@@ -5,9 +5,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.spbstu.application.R
+import com.spbstu.application.app.App
 import com.spbstu.application.base.BaseFragment
 import com.spbstu.application.databinding.FragmentSupportBinding
 import com.spbstu.application.dialogs.createSupportDialog
+import com.spbstu.application.domain.model.ErrorState
 import com.spbstu.application.extensions.setDebounceClickListener
 import com.spbstu.application.extensions.setup
 import com.spbstu.application.extensions.viewBinding
@@ -42,6 +44,13 @@ class SupportFragment : BaseFragment(contentLayoutId = R.layout.fragment_support
                 if (list.isNotEmpty()) {
                     supportAdapter.bindData(list)
                     binding.frgSupportRvList.hideShimmer()
+                }
+            }
+        }
+        lifecycleScope.launch {
+            viewModel.stateData.collect {
+                if (it != ErrorState.NONE) {
+                    App.toast(it.errorResId)
                 }
             }
         }

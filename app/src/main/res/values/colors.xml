@@ -21,4 +21,6 @@
 
     <color name="error_color">#E42323</color>
 
+    <color name="shimmer_color">#A7A6A6</color>
+
 </resources>

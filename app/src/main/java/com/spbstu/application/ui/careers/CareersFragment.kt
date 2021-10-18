@@ -4,8 +4,10 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.spbstu.application.R
+import com.spbstu.application.app.App
 import com.spbstu.application.databinding.FragmentCareersBinding
 import com.spbstu.application.dialogs.createCareerDialog
+import com.spbstu.application.domain.model.ErrorState
 import com.spbstu.application.extensions.setup
 import com.spbstu.application.extensions.viewBinding
 import com.spbstu.application.ui.careers.adapter.CareerAdapter
@@ -42,6 +44,13 @@ class CareersFragment :
                 if (list.isNotEmpty()) {
                     careerAdapter.bindData(list)
                     binding.frgCareersRvList.hideShimmer()
+                }
+            }
+        }
+        lifecycleScope.launch {
+            viewModel.stateData.collect {
+                if (it != ErrorState.NONE) {
+                    App.toast(it.errorResId)
                 }
             }
         }
