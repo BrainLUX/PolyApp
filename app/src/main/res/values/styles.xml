@@ -101,6 +101,7 @@
         <item name="android:fontFamily">@font/montserrat_medium</item>
         <item name="android:textSize">@dimen/sp_14</item>
         <item name="android:outlineProvider">none</item>
+        <item name="cornerRadius">@dimen/dp_0</item>
         <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
         <item name="android:minWidth">@dimen/dp_0</item>
         <item name="android:minHeight">@dimen/dp_0</item>
