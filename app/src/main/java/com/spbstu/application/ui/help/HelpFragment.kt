@@ -6,6 +6,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.spbstu.application.R
 import com.spbstu.application.databinding.FragmentHelpBinding
+import com.spbstu.application.extensions.setDebounceClickListener
 import com.spbstu.application.extensions.setup
 import com.spbstu.application.extensions.viewBinding
 import com.spbstu.application.ui.help.adapter.HelpAdapter
@@ -35,7 +36,13 @@ class HelpFragment :
 
     override fun setupViews() {
         initAdapters()
+        initAddButton()
         setupFromArguments()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadData()
     }
 
     override fun subscribe() {
@@ -46,6 +53,14 @@ class HelpFragment :
                     helpAdapter.bindData(it)
                     binding.frgHelpRvList.hideShimmer()
                 }
+            }
+        }
+    }
+
+    private fun initAddButton() {
+        with(binding) {
+            frgHelpIvAdd.setDebounceClickListener {
+                findNavController().navigate(R.id.action_helpFragment_to_helpAddFragment)
             }
         }
     }

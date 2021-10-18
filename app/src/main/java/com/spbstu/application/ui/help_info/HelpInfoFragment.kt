@@ -46,7 +46,7 @@ class HelpInfoFragment :
                     frgHelpInfoTvDesc.text = help.description
                     helpTagAdapter.bindData(help.tagList)
                     frgHelpInfoMbSend.setDebounceClickListener {
-                        requireContext().openLink(help.link)
+                        requireContext().openLink(VK_LINK + help.link)
                     }
                 }
             }
@@ -55,6 +55,7 @@ class HelpInfoFragment :
 
     companion object {
         private const val HELP_KEY = "com.spbstu.application.HELP_KEY"
+        private const val VK_LINK = "https://vk.com/"
 
         fun makeBundle(help: Help): Bundle = bundleOf(HELP_KEY to help)
     }

@@ -11,7 +11,7 @@ class HelpViewModel : BaseViewModel() {
     private val _helpData: MutableStateFlow<List<Help>> = MutableStateFlow(listOf())
     val helpData get() :StateFlow<List<Help>> = _helpData
 
-    init {
+    fun loadData() {
         FirebaseHelpApi.getHelp {
             _helpData.value = it
         }

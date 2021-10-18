@@ -6,6 +6,7 @@ import com.spbstu.application.base.BaseAdapter
 import com.spbstu.application.base.BaseViewHolder
 import com.spbstu.application.databinding.ItemHelpBinding
 import com.spbstu.application.domain.model.Help
+import com.spbstu.application.extensions.UNIX_TO_MILLS
 import com.spbstu.application.extensions.setDebounceClickListener
 import com.spbstu.application.extensions.viewBinding
 import com.spbstu.application.extensions.withLeadingZero
@@ -49,9 +50,5 @@ class HelpAdapter(private val onClick: (Help) -> Unit) :
                 calendar.get(Calendar.DAY_OF_MONTH).withLeadingZero()
             }.${(calendar.get(Calendar.MONTH) + 1).withLeadingZero()}.${calendar.get(Calendar.YEAR)}"
         }
-    }
-
-    private companion object {
-        const val UNIX_TO_MILLS = 1000
     }
 }

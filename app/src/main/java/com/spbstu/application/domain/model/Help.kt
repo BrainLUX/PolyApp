@@ -28,10 +28,20 @@ data class Help(
     @Parcelize
     data class Tag(
         override var id: Long = 0,
-        val title: String = ""
+        val title: String = "",
+        val isChecked: Boolean = false
     ) : BaseModel(id), Parcelable {
 
         override fun isContentEqual(other: BaseModel): Boolean =
-            other is Tag && title == other.title
+            other is Tag && title == other.title && isChecked == other.isChecked
     }
+
+    data class FirebaseEntity(
+        val title: String = "",
+        val createdAt: Long = 0,
+        val createdBy: String = "",
+        val description: String = "",
+        var tags: List<String> = listOf(),
+        val link: String = ""
+    )
 }

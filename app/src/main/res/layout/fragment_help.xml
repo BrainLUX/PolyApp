@@ -9,6 +9,17 @@
         android:id="@+id/frg_help__layout_toolbar"
         layout="@layout/include_toolbar" />
 
+    <ImageView
+        android:id="@+id/frg_help__iv_add"
+        android:layout_width="@dimen/dp_56"
+        android:layout_height="@dimen/dp_56"
+        android:background="?selectableItemBackground"
+        android:contentDescription="@string/description_back"
+        android:padding="@dimen/dp_16"
+        android:src="@drawable/ic_plus_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.todkars.shimmer.ShimmerRecyclerView
         android:id="@+id/frg_help__rv_list"
         style="@style/RecyclerView.Linear"

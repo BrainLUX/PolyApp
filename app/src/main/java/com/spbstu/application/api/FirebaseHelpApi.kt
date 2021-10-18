@@ -3,6 +3,7 @@ package com.spbstu.application.api
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.spbstu.application.domain.model.*
+import com.spbstu.application.extensions.UNIX_TO_MILLS
 
 object FirebaseHelpApi {
     private const val HELP_COLLECTION = "help"
@@ -28,5 +29,18 @@ object FirebaseHelpApi {
                 }
                 onItemsLoaded(list)
             }
+    }
+
+    fun sendHelp(title: String, description: String, link: String, tags: List<String>) {
+        Firebase.firestore.collection(HELP_COLLECTION).add(
+            Help.FirebaseEntity(
+                title,
+                System.currentTimeMillis() / UNIX_TO_MILLS,
+                "Admin", //TODO: replace when user api resolved
+                description,
+                tags,
+                link
+            )
+        )
     }
 }

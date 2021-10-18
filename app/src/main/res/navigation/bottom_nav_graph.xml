@@ -83,10 +83,22 @@
             app:exitAnim="@anim/close_fragment_slide_left"
             app:popEnterAnim="@anim/open_fragment_slide_left"
             app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_helpFragment_to_helpAddFragment"
+            app:destination="@id/helpAddFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
     </fragment>
     <fragment
         android:id="@+id/helpInfoFragment"
         android:name="com.spbstu.application.ui.help_info.HelpInfoFragment"
         android:label="HelpInfoFragment"
         tools:layout="@layout/fragment_help_info" />
+    <fragment
+        android:id="@+id/helpAddFragment"
+        android:name="com.spbstu.application.ui.help_add.HelpAddFragment"
+        android:label="HelpAddFragment"
+        tools:layout="@layout/fragment_help_add" />
 </navigation>

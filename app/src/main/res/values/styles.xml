@@ -106,4 +106,38 @@
         <item name="android:minHeight">@dimen/dp_0</item>
         <item name="iconGravity">end</item>
     </style>
+
+    <style name="TextInputLayout.InputForm.Box" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">@dimen/dp_8</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/dp_8</item>
+        <item name="boxCornerRadiusTopStart">@dimen/dp_8</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/dp_8</item>
+        <item name="boxStrokeColor">@color/color_primary</item>
+        <item name="boxStrokeWidth">@dimen/dp_1</item>
+        <item name="boxStrokeErrorColor">@color/mtrl_outlined_stroke_color</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="endIconMode">none</item>
+        <item name="android:textColorHint">@color/color_secondary</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="hintTextColor">@color/color_secondary</item>
+    </style>
+
+    <style name="EditText.InputForm.Box" parent="Widget.AppCompat.EditText">
+        <item name="android:paddingStart">@dimen/dp_16</item>
+        <item name="android:paddingEnd">@dimen/dp_18</item>
+        <item name="android:paddingTop">@dimen/dp_18</item>
+        <item name="android:paddingBottom">@dimen/dp_18</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:editable">true</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+    <style name="TextAppearance.Error" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/error_color</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+    </style>
 </resources>

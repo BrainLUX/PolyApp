@@ -89,4 +89,5 @@ dependencies {
     implementation expandableDep
 
     implementation jsoupDep
+    implementation chipLayoutDep
 }

@@ -34,9 +34,10 @@
         android:id="@+id/frg_help_info__tv_desc"
         style="@style/TextView.Default.Black"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_0"
         android:layout_marginTop="@dimen/dp_16"
         android:paddingHorizontal="@dimen/dp_16"
+        app:layout_constraintBottom_toTopOf="@id/frg_help_info__mb_send"
         app:layout_constraintTop_toBottomOf="@id/frg_help_info__rv_tags"
         tools:text="Текст просьбы" />
 
