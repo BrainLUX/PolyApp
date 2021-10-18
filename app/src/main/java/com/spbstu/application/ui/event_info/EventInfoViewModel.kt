@@ -15,7 +15,7 @@ class EventInfoViewModel : BaseViewModel() {
 
     fun loadDescription(link: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            EventsApi.getEventDescription(link) {
+            EventsApi.getEventDescription(link,{}) {
                 _eventDescriptionData.value = it
             }
         }

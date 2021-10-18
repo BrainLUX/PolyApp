@@ -67,7 +67,7 @@ class HelpFragment :
 
     private fun initAdapters() {
         with(binding) {
-            frgHelpRvList.setup(helpAdapter, R.layout.item_help)
+            frgHelpRvList.setup(helpAdapter, R.layout.shimmer_help)
         }
     }
 

@@ -5,7 +5,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.spbstu.application.R
+import com.spbstu.application.app.App
 import com.spbstu.application.databinding.FragmentEventsBinding
+import com.spbstu.application.domain.model.ErrorState
 import com.spbstu.application.extensions.setup
 import com.spbstu.application.extensions.viewBinding
 import com.spbstu.application.ui.event_info.EventInfoFragment
@@ -46,6 +48,13 @@ class EventsFragment :
                 if (list.isNotEmpty()) {
                     clubsAdapter.bindData(list)
                     binding.frgEventsRvList.hideShimmer()
+                }
+            }
+        }
+        lifecycleScope.launch {
+            viewModel.stateData.collect {
+                if (it != ErrorState.NONE) {
+                    App.toast(it.errorResId)
                 }
             }
         }
