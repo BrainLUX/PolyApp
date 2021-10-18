@@ -4,8 +4,8 @@ import com.spbstu.application.domain.model.*
 import org.jsoup.Jsoup
 
 object EventsApi {
-    private const val EVENT_URL = "https://www.spbstu.ru/media/announcements/"
     private const val BASE_URL = "https://www.spbstu.ru"
+    private const val EVENT_URL = "$BASE_URL/media/announcements/"
 
     fun getEventList(onItemsLoaded: (List<Event>) -> Unit) {
         val list = mutableListOf<Event>()

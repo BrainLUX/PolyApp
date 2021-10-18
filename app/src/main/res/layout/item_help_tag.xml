@@ -12,6 +12,7 @@
         android:id="@+id/item_help_tag__mcv_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/background_primary"
         app:cardCornerRadius="@dimen/dp_8"
         app:strokeColor="@color/color_secondary"
         app:strokeWidth="@dimen/dp_1">
@@ -23,6 +24,7 @@
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/dp_8"
             android:paddingVertical="@dimen/dp_4"
+            android:textColor="@color/chip_font_color"
             tools:text="Учёба" />
     </com.google.android.material.card.MaterialCardView>
 </FrameLayout>

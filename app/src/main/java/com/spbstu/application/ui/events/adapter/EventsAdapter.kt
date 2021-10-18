@@ -22,18 +22,18 @@ class EventsAdapter(private val onClick: (Event) -> Unit) :
     inner class EventsViewHolder(parent: ViewGroup) :
         BaseViewHolder<Event, ItemEventBinding>(parent.viewBinding(ItemEventBinding::inflate)) {
 
-        private lateinit var club: Event
+        private lateinit var event: Event
 
         init {
             with(binding) {
                 itemEventMcvCard.setDebounceClickListener {
-                    onClick(club)
+                    onClick(event)
                 }
             }
         }
 
         override fun bind(item: Event) {
-            club = item
+            event = item
             with(binding) {
                 itemEventTvTitle.text = item.title
                 itemEventTvStarts.text = item.starts

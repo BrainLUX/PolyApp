@@ -40,11 +40,6 @@ class HelpTagAdapter(private val onClick: ((Tag) -> Unit)? = null) :
                             R.color.color_secondary
                         )
                     )
-                    itemHelpTagTvText.setTextColor(
-                        ContextCompat.getColor(
-                            itemView.context, R.color.text_color_primary,
-                        )
-                    )
                 } else {
                     itemHelpTagMcvCard.setCardBackgroundColor(
                         ContextCompat.getColor(
@@ -52,12 +47,8 @@ class HelpTagAdapter(private val onClick: ((Tag) -> Unit)? = null) :
                             R.color.background_primary
                         )
                     )
-                    itemHelpTagTvText.setTextColor(
-                        ContextCompat.getColor(
-                            itemView.context, R.color.text_color_secondary,
-                        )
-                    )
                 }
+                itemHelpTagTvText.isEnabled = !item.isChecked
             }
         }
     }

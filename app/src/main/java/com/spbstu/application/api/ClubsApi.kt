@@ -20,10 +20,7 @@ object ClubsApi {
                         element.selectFirst(".student-org__desc").text(),
                         element.select(".student-org__field")
                             .mapIndexed { elemIndex, elem ->
-                                Tag(
-                                    elemIndex.toLong(),
-                                    elem.text()
-                                )
+                                Tag(elemIndex.toLong(), elem.text())
                             },
                         element.select(".student-org__social-item").mapIndexed { elemIndex, elem ->
                             Club.Link(elemIndex.toLong(), elem.attr("title"), elem.attr("href"))

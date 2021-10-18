@@ -20,10 +20,7 @@ object FirebaseHelpApi {
                     help.helpId = documentSnapshot.id
                     help.tagList =
                         (documentSnapshot[TAGS_FIELD] as List<*>).mapIndexed { tagIndex, elem ->
-                            Tag(
-                                tagIndex.toLong(),
-                                elem.toString()
-                            )
+                            Tag(tagIndex.toLong(), elem.toString())
                         }
                     list.add(help)
                 }
