@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.view.View
 import android.view.Window
+import android.webkit.WebView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.os.bundleOf
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.spbstu.application.R
 import com.spbstu.application.domain.model.Career
 import com.spbstu.application.domain.model.Club
+import com.spbstu.application.domain.model.Enquiry
 import com.spbstu.application.domain.model.Support
 import com.spbstu.application.extensions.openLink
 import com.spbstu.application.extensions.setDebounceClickListener
@@ -51,6 +53,17 @@ fun Context.createCareerDialog(career: Career): Dialog {
             button.visibility = View.GONE
         }
         findViewById<View>(R.id.dg_career__rl_parent).setDebounceClickListener {
+            dismiss()
+        }
+    }
+}
+
+fun Context.createEnquiryDialog(enquiry: Enquiry): Dialog {
+    return Dialog(this, android.R.style.Theme_Translucent).apply {
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        setContentView(R.layout.dialog_enquiry)
+        findViewById<WebView>(R.id.dg_enquiry__wv_description).loadData(enquiry.description,"text/html", "UTF-8")
+        findViewById<View>(R.id.dg_enquiry__rl_parent).setDebounceClickListener {
             dismiss()
         }
     }

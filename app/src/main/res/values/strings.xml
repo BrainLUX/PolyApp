@@ -58,4 +58,6 @@
     <string name="event_info_title">Информация о мероприятии</string>
 
     <string name="error_network">Подключение к интернету отсутствует, попробуйте позднее.</string>
+
+    <string name="enquiry_title">Информация о справке</string>
 </resources>
