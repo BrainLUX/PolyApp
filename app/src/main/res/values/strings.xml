@@ -60,4 +60,10 @@
     <string name="error_network">Подключение к интернету отсутствует, попробуйте позднее.</string>
 
     <string name="enquiry_title">Информация о справке</string>
+
+    <string name="feedback_title">Опишите нам проблему и мы постараемся её решить как можно скорее</string>
+    <string name="feedback_button">Отправить</string>
+    <string name="feedback_email_hint">Email</string>
+    <string name="feedback_message_hint">Проблема</string>
+    <string name="feedback_sent">Спасибо за обращение! Мы постараемся решить проблему как можно быстрее.</string>
 </resources>
