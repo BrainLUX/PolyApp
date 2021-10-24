@@ -1,7 +1,6 @@
 package com.spbstu.application.ui.enquiry
 
 import androidx.lifecycle.viewModelScope
-import com.spbstu.application.api.CareersApi
 import com.spbstu.application.api.EnquiryApi
 import com.spbstu.application.base.BaseViewModel
 import com.spbstu.application.domain.model.Enquiry

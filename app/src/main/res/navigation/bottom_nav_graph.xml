@@ -76,6 +76,13 @@
             app:exitAnim="@anim/close_fragment_slide_left"
             app:popEnterAnim="@anim/open_fragment_slide_left"
             app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_servicesFragment_to_eatFragment"
+            app:destination="@id/eatFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
@@ -174,4 +181,9 @@
         android:name="com.spbstu.application.ui.feedback.FeedbackFragment"
         android:label="FeedbackFragment"
         tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/eatFragment"
+        android:name="com.spbstu.application.ui.eat.EatFragment"
+        android:label="EatFragment"
+        tools:layout="@layout/fragment_eat" />
 </navigation>

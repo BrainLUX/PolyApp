@@ -66,4 +66,11 @@
     <string name="feedback_email_hint">Email</string>
     <string name="feedback_message_hint">Проблема</string>
     <string name="feedback_sent">Спасибо за обращение! Мы постараемся решить проблему как можно быстрее.</string>
+
+    <string name="eat_title">Где находится заведение</string>
+    <array name="eat_tags">
+        <item>Все</item>
+        <item>Столовая</item>
+        <item>Кафе</item>
+    </array>
 </resources>
