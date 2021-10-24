@@ -24,7 +24,7 @@ object FirebaseHelpApi {
                         }
                     list.add(help)
                 }
-                onItemsLoaded(list)
+                onItemsLoaded(list.sortedBy { it.createdAt }.reversed())
             }
     }
 
