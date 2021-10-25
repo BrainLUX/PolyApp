@@ -58,6 +58,10 @@
         <item name="android:textColor">@color/color_secondary</item>
     </style>
 
+    <style name="TextView.Tag.Big" parent="TextView.Default">
+        <item name="android:textColor">@color/color_secondary</item>
+    </style>
+
     <style name="TextView.Default.Gray" parent="TextView.Default">
         <item name="android:textColor">@color/menu_icon_disable_primary</item>
     </style>

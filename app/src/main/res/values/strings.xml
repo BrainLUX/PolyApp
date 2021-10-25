@@ -58,15 +58,19 @@
     <string name="event_info_title">Информация о мероприятии</string>
 
     <string name="error_network">Подключение к интернету отсутствует, попробуйте позднее.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="monday">ПН</string>
-    <string name="tuesday">ВТ</string>
-    <string name="wednesday">СР</string>
-    <string name="thursday">ЧТ</string>
-    <string name="friday">ПТ</string>
-    <string name="saturday">СБ</string>
-    <string name="sunday">ВС</string>
+    <string name="enquiry_title">Информация о справке</string>
 
+    <string name="feedback_title">Опишите нам проблему и мы постараемся её решить как можно скорее</string>
+    <string name="feedback_button">Отправить</string>
+    <string name="feedback_email_hint">Email</string>
+    <string name="feedback_message_hint">Проблема</string>
+    <string name="feedback_sent">Спасибо за обращение! Мы постараемся решить проблему как можно быстрее.</string>
+
+    <string name="eat_title">Где находится заведение</string>
+    <array name="eat_tags">
+        <item>Все</item>
+        <item>Столовая</item>
+        <item>Кафе</item>
+    </array>
 </resources>
