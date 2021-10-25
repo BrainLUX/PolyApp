@@ -46,6 +46,14 @@
         <item name="android:textSize">@dimen/sp_10</item>
     </style>
 
+    <style name="TextView.Small.Black" parent="TextView.Small">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextView.Small.Gray" parent="TextView.Small">
+        <item name="android:textColor">@color/menu_icon_disable_primary</item>
+    </style>
+
     <style name="TextView.Tag" parent="TextView.Small">
         <item name="android:textColor">@color/color_secondary</item>
     </style>
@@ -71,6 +79,10 @@
 
     <style name="TextView.H3.Black" parent="TextView.H3">
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextView.H3.Gray" parent="TextView.H3">
+        <item name="android:textColor">@color/menu_icon_disable_primary</item>
     </style>
 
     <style name="TextView.H1" parent="TextView.Default">

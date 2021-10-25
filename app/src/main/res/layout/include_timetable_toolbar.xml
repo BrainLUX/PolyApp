@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_56"
+    android:background="@color/color_primary"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/include_tb_toolbar__back"
+        android:layout_width="@dimen/dp_56"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:contentDescription="@string/description_back"
+        android:padding="@dimen/dp_16"
+        android:src="@drawable/ic_baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/include_tb_toolbar__data"
+        style="@style/TextView.H2"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_56"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="@dimen/dp_16"
+        tools:ignore="InefficientWeight"
+        tools:text="Week" />
+
+    <ImageView
+        android:id="@+id/include_tb_toolbar__next"
+        android:layout_width="@dimen/dp_56"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:contentDescription="@string/description_back"
+        android:padding="@dimen/dp_16"
+        android:src="@drawable/ic_baseline_arrow_forward_24" />
+</LinearLayout>
