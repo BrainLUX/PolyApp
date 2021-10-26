@@ -9,10 +9,11 @@ object EatApi {
 
     fun getEatList(onError: () -> Unit, onItemsLoaded: (List<Eat>) -> Unit) {
         try {
+            val cafeList = parsePage(EAT_CAFE_URL, Eat.Type.CAFE)
             onItemsLoaded(
-                (parsePage(EAT_CAFE_URL, Eat.Type.CAFE) + parsePage(
+                (cafeList + parsePage(
                     EAT_CANTEEN_URL,
-                    Eat.Type.CANTEEN
+                    Eat.Type.CANTEEN, cafeList.size + 1
                 )).shuffled()
             )
         } catch (e: Exception) {
@@ -22,7 +23,8 @@ object EatApi {
 
     private fun parsePage(
         url: String,
-        type: Eat.Type
+        type: Eat.Type,
+        startIndex: Int = 0
     ): List<Eat> {
         val list = mutableListOf<Eat>()
 
@@ -62,7 +64,7 @@ object EatApi {
                     }
                     list.add(
                         Eat(
-                            index.toLong(),
+                            (startIndex + index).toLong(),
                             title,
                             addressElem.text(),
                             time, imgLink, type

@@ -16,6 +16,7 @@ data class Eat(
                 && address == other.address
                 && time == other.time
                 && mapUrl == other.mapUrl
+                && type == other.type
 
     enum class Type(val index: Long) {
         CANTEEN(1L), CAFE(2L)
