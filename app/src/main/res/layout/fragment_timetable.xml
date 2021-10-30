@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.timetable.TimetableFragment">
 
@@ -14,7 +14,7 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/frg_timetable__days_tab"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_8"
         app:tabGravity="center"
         app:tabIndicator="@drawable/background_card"
