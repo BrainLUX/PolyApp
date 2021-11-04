@@ -11,7 +11,8 @@ class TimetableViewModel : BaseViewModel() {
     private val _testDay: MutableStateFlow<List<Lesson>> = MutableStateFlow(listOf())
     val testDay get() :StateFlow<List<Lesson>> = _testDay
 
-    private val _pickData: MutableStateFlow<Calendar> = MutableStateFlow(Calendar.getInstance())
+    private val _pickData: MutableStateFlow<Calendar> =
+        MutableStateFlow(Calendar.getInstance())
     val pickData: StateFlow<Calendar> = _pickData
 
     init {
@@ -60,6 +61,13 @@ class TimetableViewModel : BaseViewModel() {
         _pickData.value = Calendar.getInstance().apply {
             timeInMillis = pickData.value.timeInMillis
             set(Calendar.WEEK_OF_MONTH, pickData.value.get(Calendar.WEEK_OF_MONTH) - 1)
+        }
+    }
+
+    fun updateToDays(day: Int) {
+        _pickData.value = Calendar.getInstance().apply {
+            timeInMillis = pickData.value.timeInMillis
+            add(Calendar.DAY_OF_WEEK, day)
         }
     }
 }

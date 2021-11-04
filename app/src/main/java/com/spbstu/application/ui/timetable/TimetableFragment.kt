@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayoutMediator
 import com.spbstu.application.R
 import com.spbstu.application.base.BaseFragment
@@ -39,6 +41,14 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
         lifecycleScope.launch {
             viewModel.pickData.collect { calendar ->
                 binding.tbToolbar.data.text = DatePickerFragment.defaultDateFormat(calendar)
+
+                // TODO adequate switching
+                //  get(Calendar.DAY_OF_WEEK) returns:
+                //  1) Numbers in the range from 1 to 7
+                //  2) The beginning of the week is Sunday when the tab uses Mon start day
+                var day = calendar.get(Calendar.DAY_OF_WEEK)
+                day = if (day == 1) 6 else day - 2
+                binding.lessonsVp2.currentItem = day
             }
         }
     }
@@ -69,6 +79,36 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
             }
             datePickerFragment.show(supportFragmentManager, "DatePickerFragment")
         }
+
+        binding.daysTab.addOnTabSelectedListener(object : OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+
+                // TODO adequate switching
+                //  get(Calendar.DAY_OF_WEEK) returns:
+                //  1) Numbers in the range from 1 to 7
+                //  2) The beginning of the week is Sunday when the tab uses Mon start day
+                var day = tab.position + 1
+                day = if (day == 7) 1 else day + 1
+                val currentDay = viewModel.pickData.value.get(Calendar.DAY_OF_WEEK)
+                if (day != currentDay) {
+
+                    var delta = 0
+                    if (day == 1) {
+                        delta = 7
+                    }
+
+                    if (currentDay == 1) {
+                        delta = -7
+                    }
+
+                    delta += day - currentDay
+                    viewModel.updateToDays(delta)
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
     }
 
     companion object {
