@@ -42,16 +42,24 @@ class TimetableViewModel : BaseViewModel() {
     }
 
     fun updatePickedDate(calendar: Calendar) {
-        _pickData.value = calendar
+        _pickData.value = Calendar.getInstance().apply {
+            set(Calendar.YEAR, calendar.get(Calendar.YEAR))
+            set(Calendar.MONTH, calendar.get(Calendar.MONTH))
+            set(Calendar.DAY_OF_MONTH, calendar.get(Calendar.DAY_OF_MONTH))
+        }
     }
 
     fun updateToNextWeek() {
-        var i: Int = _pickData.value.get(Calendar.WEEK_OF_MONTH)
-        _pickData.value.set(Calendar.WEEK_OF_MONTH, ++i)
+        _pickData.value = Calendar.getInstance().apply {
+            timeInMillis = pickData.value.timeInMillis
+            set(Calendar.WEEK_OF_MONTH, pickData.value.get(Calendar.WEEK_OF_MONTH) + 1)
+        }
     }
 
     fun updateToPrevWeek() {
-        var i: Int = _pickData.value.get(Calendar.WEEK_OF_MONTH)
-        _pickData.value.set(Calendar.WEEK_OF_MONTH, --i)
+        _pickData.value = Calendar.getInstance().apply {
+            timeInMillis = pickData.value.timeInMillis
+            set(Calendar.WEEK_OF_MONTH, pickData.value.get(Calendar.WEEK_OF_MONTH) - 1)
+        }
     }
 }
