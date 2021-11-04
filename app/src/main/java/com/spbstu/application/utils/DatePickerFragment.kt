@@ -9,7 +9,17 @@ import androidx.fragment.app.setFragmentResult
 import java.text.SimpleDateFormat
 import java.util.*
 
-class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
+class DatePickerFragment(
+    private val REQUEST_KEY: String
+) : DialogFragment(), DatePickerDialog.OnDateSetListener {
+
+    companion object {
+        const val KEY_DATA = "SELECTED_DATE";
+
+        fun defaultDateFormat(calendar: Calendar): String =
+            SimpleDateFormat("dd MMMM", Locale.getDefault()).format(calendar.time);
+    }
+
     private val calendar = Calendar.getInstance()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -25,12 +35,11 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
         calendar.set(Calendar.MONTH, month)
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-        val selectedDate =
-            SimpleDateFormat("dd MMMM", Locale.getDefault()).format(calendar.time)
+        val selectedDate = defaultDateFormat(calendar)
 
         val selectedDateBundle = Bundle()
-        selectedDateBundle.putString("SELECTED_DATE", selectedDate)
+        selectedDateBundle.putString(KEY_DATA, selectedDate)
 
-        setFragmentResult("REQUEST_KEY", selectedDateBundle)
+        setFragmentResult(REQUEST_KEY, selectedDateBundle)
     }
 }
