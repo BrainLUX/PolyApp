@@ -15,10 +15,10 @@ class DatePickerFragment(
 ) : DialogFragment(), DatePickerDialog.OnDateSetListener {
 
     companion object {
-        const val CALENDAR_KEY = "com.spbstu.application.utils.SELECTED_DATE";
+        const val CALENDAR_KEY = "com.spbstu.application.utils.SELECTED_DATE"
 
         fun defaultDateFormat(calendar: Calendar): String =
-            SimpleDateFormat("dd MMMM", Locale.getDefault()).format(calendar.time);
+            SimpleDateFormat("dd MMMM", Locale.getDefault()).format(calendar.time)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -26,7 +26,10 @@ class DatePickerFragment(
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-        return DatePickerDialog(requireActivity(), this, year, month, day)
+        val datePickerDialog = DatePickerDialog(requireActivity(), this, year, month, day)
+        datePickerDialog.datePicker.firstDayOfWeek = Calendar.MONDAY
+
+        return datePickerDialog
     }
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
