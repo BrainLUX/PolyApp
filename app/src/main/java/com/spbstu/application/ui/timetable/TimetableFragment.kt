@@ -17,14 +17,12 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
     override fun setupViews() {
         val weekAdapter = WeekAdapter(this, viewModel)
 
-        with(binding) {
-            lessonsVp2.adapter = weekAdapter
-            TabLayoutMediator(daysTab, lessonsVp2) { tab, position ->
-                tab.text = context?.resources?.getString(INFO_TITLES[position])
-            }.attach()
+        binding.lessonsVp2.adapter = weekAdapter
+        TabLayoutMediator(binding.daysTab, binding.lessonsVp2) { tab, position ->
+            tab.text = context?.resources?.getString(INFO_TITLES[position])
+        }.attach()
 
-            tbToolbar.data.text = "14 May"
-        }
+        binding.tbToolbar.data.text = "14 May"
     }
 
     companion object {

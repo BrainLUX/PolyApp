@@ -20,13 +20,10 @@ class DayFragment(viewModel: TimetableViewModel) : BaseFragment(R.layout.fragmen
     private val viewModel = viewModel
 
     override fun setupViews() {
+        binding.dayOfWeek.text = "Day of Week"
+        binding.dayAndMonth.text = "day and month"
 
-        with(binding) {
-            dayOfWeek.text = "Day of Week"
-            dayAndMonth.text = "day and month"
-
-            lessonsSrv.setup(dayAdapter, R.layout.item_lesson_timetable)
-        }
+        binding.lessonsSrv.setup(dayAdapter, R.layout.item_lesson_timetable)
     }
 
     override fun subscribe() {
