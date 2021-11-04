@@ -10,17 +10,16 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class DatePickerFragment(
+    private val calendar: Calendar,
     private val REQUEST_KEY: String
 ) : DialogFragment(), DatePickerDialog.OnDateSetListener {
 
     companion object {
-        const val KEY_DATA = "SELECTED_DATE";
+        const val CALENDAR_KEY = "com.spbstu.application.utils.SELECTED_DATE";
 
         fun defaultDateFormat(calendar: Calendar): String =
             SimpleDateFormat("dd MMMM", Locale.getDefault()).format(calendar.time);
     }
-
-    private val calendar = Calendar.getInstance()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val year = calendar.get(Calendar.YEAR)
@@ -35,10 +34,8 @@ class DatePickerFragment(
         calendar.set(Calendar.MONTH, month)
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-        val selectedDate = defaultDateFormat(calendar)
-
         val selectedDateBundle = Bundle()
-        selectedDateBundle.putString(KEY_DATA, selectedDate)
+        selectedDateBundle.putSerializable(CALENDAR_KEY, calendar)
 
         setFragmentResult(REQUEST_KEY, selectedDateBundle)
     }
