@@ -23,12 +23,12 @@ class DayAdapter() :
         override fun bind(item: Lesson) {
             lesson = item
             with(binding) {
-                itemLessonStart.text = item.start
-                itemLessonEnd.text = item.end
-                itemLessonName.text = item.name
-                itemLessonType.text = item.type
-                itemLessonPlace.text = item.place
-                itemLessonTeacher.text = item.teacher
+                startTime.text = item.start
+                endTime.text = item.end
+                lessonName.text = item.name
+                lessonType.text = item.type
+                lessonPlace.text = item.place
+                teacherName.text = item.teacher
             }
         }
 

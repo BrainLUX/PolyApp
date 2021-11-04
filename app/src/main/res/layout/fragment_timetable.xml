@@ -8,11 +8,11 @@
     tools:context=".ui.timetable.TimetableFragment">
 
     <include
-        android:id="@+id/frg_timetable__layout_tb_toolbar"
+        android:id="@+id/tb_toolbar"
         layout="@layout/include_timetable_toolbar" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/frg_timetable__days_tab"
+        android:id="@+id/days_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_8"
@@ -21,10 +21,11 @@
         app:tabIndicatorAnimationMode="elastic"
         app:tabIndicatorGravity="stretch"
         app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/white" />
+        app:tabSelectedTextColor="@color/white"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/frg_timetable__lessons_vp2"
+        android:id="@+id/lessons_vp2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

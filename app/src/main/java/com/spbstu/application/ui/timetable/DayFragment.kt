@@ -22,10 +22,10 @@ class DayFragment(viewModel: TimetableViewModel) : BaseFragment(R.layout.fragmen
     override fun setupViews() {
 
         with(binding) {
-            itemDayTbDayOfWeek.text = "Day of Week"
-            itemDayTbDayAndMonth.text = "day and month"
+            dayOfWeek.text = "Day of Week"
+            dayAndMonth.text = "day and month"
 
-            itemDayTbLessons.setup(dayAdapter, R.layout.item_lesson_timetable)
+            lessonsSrv.setup(dayAdapter, R.layout.item_lesson_timetable)
         }
     }
 
@@ -33,7 +33,7 @@ class DayFragment(viewModel: TimetableViewModel) : BaseFragment(R.layout.fragmen
         lifecycleScope.launch {
             viewModel.testDay.collect {
                 dayAdapter.bindData(it)
-                binding.itemDayTbLessons.hideShimmer()
+                binding.lessonsSrv.hideShimmer()
             }
         }
     }

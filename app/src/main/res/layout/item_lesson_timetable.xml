@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/item_lesson__start"
+        android:id="@+id/start_time"
         style="@style/TextView.Default.Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,18 +17,18 @@
         tools:text="Start" />
 
     <TextView
-        android:id="@+id/item_lesson__end"
+        android:id="@+id/end_time"
         style="@style/TextView.Default.Gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_16"
         android:layout_marginTop="@dimen/dp_4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_lesson__start"
+        app:layout_constraintTop_toBottomOf="@+id/start_time"
         tools:text="End" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/item_lesson__card"
+        android:id="@+id/card"
         android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_16"
@@ -38,7 +38,7 @@
         app:cardCornerRadius="@dimen/dp_10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/item_lesson__start"
+        app:layout_constraintStart_toEndOf="@+id/start_time"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/item_lesson__name"
+                android:id="@+id/lesson_name"
                 style="@style/TextView.Default.Black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 tools:text="Lesson" />
 
             <TextView
-                android:id="@+id/item_lesson__type"
+                android:id="@+id/lesson_type"
                 style="@style/TextView.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,18 +70,18 @@
                 tools:text="Type" />
 
             <TextView
-                android:id="@+id/item_lesson__place"
+                android:id="@+id/lesson_place"
                 style="@style/TextView.Small.Gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_16"
                 android:layout_marginTop="@dimen/dp_4"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/item_lesson__name"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_name"
                 tools:text="Place" />
 
             <TextView
-                android:id="@+id/item_lesson__teacher"
+                android:id="@+id/teacher_name"
                 style="@style/TextView.Small.Gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                 android:layout_marginBottom="@dimen/dp_4"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/item_lesson__place"
+                app:layout_constraintTop_toBottomOf="@+id/lesson_place"
                 tools:text="Teacher" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

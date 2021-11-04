@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/item_day_tb__day_of_week"
+        android:id="@+id/day_of_week"
         style="@style/TextView.H1.Black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +14,7 @@
         tools:text="Вторник" />
 
     <TextView
-        android:id="@+id/item_day_tb__day_and_month"
+        android:id="@+id/day_and_month"
         style="@style/TextView.H3.Gray"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
         tools:text="12 октября" />
 
     <com.todkars.shimmer.ShimmerRecyclerView
-        android:id="@+id/item_day_tb__lessons"
+        android:id="@+id/lessons_srv"
         style="@style/RecyclerView.Linear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

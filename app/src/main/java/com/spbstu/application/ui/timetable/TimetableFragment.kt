@@ -1,12 +1,10 @@
 package com.spbstu.application.ui.timetable
 
-import android.view.View
 import androidx.fragment.app.viewModels
 import com.google.android.material.tabs.TabLayoutMediator
 import com.spbstu.application.R
 import com.spbstu.application.base.BaseFragment
 import com.spbstu.application.databinding.FragmentTimetableBinding
-import com.spbstu.application.databinding.IncludeTimetableToolbarBinding
 import com.spbstu.application.extensions.viewBinding
 import com.spbstu.application.ui.timetable.adapter.WeekAdapter
 
@@ -20,10 +18,12 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
         val weekAdapter = WeekAdapter(this, viewModel)
 
         with(binding) {
-            frgTimetableLessonsVp2.adapter = weekAdapter
-            TabLayoutMediator(frgTimetableDaysTab, frgTimetableLessonsVp2) { tab, position ->
+            lessonsVp2.adapter = weekAdapter
+            TabLayoutMediator(daysTab, lessonsVp2) { tab, position ->
                 tab.text = context?.resources?.getString(INFO_TITLES[position])
             }.attach()
+
+            tbToolbar.data.text = "14 May"
         }
     }
 
