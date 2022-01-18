@@ -4,12 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/frg_news__tl_tabs"
-        style="@style/TabLayout.Default"
+    <include
+        android:id="@+id/frg_news__layout_toolbar"
+        layout="@layout/include_toolbar" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/frg_news__mcv_tabs_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:cardBackgroundColor="@color/color_transparent"
+        app:cardCornerRadius="@dimen/dp_0"
+        app:cardElevation="@dimen/dp_4"
+        app:layout_constraintTop_toBottomOf="@id/frg_news__layout_toolbar">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/frg_news__tl_tabs"
+            style="@style/TabLayout.Default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false" />
+    </com.google.android.material.card.MaterialCardView>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/frg_news__vp2_fragments"
@@ -18,5 +32,5 @@
         android:orientation="horizontal"
         android:overScrollMode="never"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frg_news__tl_tabs" />
+        app:layout_constraintTop_toBottomOf="@id/frg_news__mcv_tabs_holder" />
 </androidx.constraintlayout.widget.ConstraintLayout>

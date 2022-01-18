@@ -156,15 +156,19 @@
 
     <style name="TabLayout.Default" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabBackground">@color/color_primary</item>
+        <item name="android:background">@color/color_primary</item>
         <item name="tabSelectedTextColor">@color/text_color_primary</item>
-        <item name="tabTextColor">@color/text_color_primary</item>
+        <item name="tabTextColor">@color/text_color_primary_dark</item>
         <item name="tabIndicatorColor">@color/text_color_primary</item>
         <item name="tabMode">scrollable</item>
+        <item name="tabIndicatorAnimationMode">elastic</item>
         <item name="android:overScrollMode">never</item>
         <item name="tabTextAppearance">@style/Tab.Default</item>
     </style>
 
     <style name="Tab.Default" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
+        <item name="android:padding">@dimen/dp_0</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
 </resources>
