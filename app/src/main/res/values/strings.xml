@@ -9,6 +9,7 @@
     <string name="description_service">Сервис</string>
     <string name="description_back">Назад</string>
     <string name="description_building">Фото здания</string>
+    <string name="description_news">Фото новости</string>
 
     <string name="service_actual_title">Актуальное</string>
     <string name="service_university_title">Университет</string>

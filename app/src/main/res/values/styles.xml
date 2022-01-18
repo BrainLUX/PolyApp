@@ -42,6 +42,14 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="TextView.Middle" parent="TextView.Default">
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="TextView.Middle.Black" parent="TextView.Middle">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
     <style name="TextView.Small" parent="TextView.Default">
         <item name="android:textSize">@dimen/sp_10</item>
     </style>
@@ -156,5 +164,23 @@
     <style name="TextAppearance.Error" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/error_color</item>
         <item name="android:textSize">@dimen/sp_12</item>
+    </style>
+
+    <style name="TabLayout.Default" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabBackground">@color/color_primary</item>
+        <item name="android:background">@color/color_primary</item>
+        <item name="tabSelectedTextColor">@color/text_color_primary</item>
+        <item name="tabTextColor">@color/text_color_primary_dark</item>
+        <item name="tabIndicatorColor">@color/text_color_primary</item>
+        <item name="tabMode">scrollable</item>
+        <item name="tabIndicatorAnimationMode">elastic</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="tabTextAppearance">@style/Tab.Default</item>
+    </style>
+
+    <style name="Tab.Default" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:padding">@dimen/dp_0</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
 </resources>

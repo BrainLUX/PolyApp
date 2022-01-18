@@ -9,7 +9,15 @@
         android:id="@+id/newsFragment"
         android:name="com.spbstu.application.ui.news.NewsFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_newsFragment_to_newsInfoFragment"
+            app:destination="@id/newsInfoFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.spbstu.application.ui.profile.ProfileFragment"
@@ -186,4 +194,9 @@
         android:name="com.spbstu.application.ui.eat.EatFragment"
         android:label="EatFragment"
         tools:layout="@layout/fragment_eat" />
+    <fragment
+        android:id="@+id/newsInfoFragment"
+        android:name="com.spbstu.application.ui.news_info.NewsInfoFragment"
+        android:label="NewsInfoFragment"
+        tools:layout="@layout/fragment_news_info" />
 </navigation>

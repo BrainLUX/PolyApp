@@ -1,10 +1,13 @@
 package com.spbstu.application.utils
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.updateLayoutParams
 import androidx.navigation.fragment.findNavController
 import com.spbstu.application.R
 import com.spbstu.application.base.BaseFragment
@@ -38,10 +41,21 @@ abstract class ToolbarFragment constructor(
                 layoutToolbarBinding.includeToolbarIvButton.visibility = View.GONE
             }
             ToolbarType.BACK -> {
-                layoutToolbarBinding.includeToolbarIvButton.visibility = View.VISIBLE
-                layoutToolbarBinding.includeToolbarIvButton.setImageResource(type.backIcon)
-                layoutToolbarBinding.includeToolbarIvButton.setDebounceClickListener {
-                    findNavController().popBackStack()
+                with(layoutToolbarBinding) {
+                    includeToolbarIvButton.visibility = View.VISIBLE
+                    includeToolbarIvButton.setImageResource(type.backIcon)
+                    includeToolbarIvButton.setDebounceClickListener {
+                        findNavController().popBackStack()
+                    }
+                }
+            }
+            ToolbarType.NEWS -> {
+                with(layoutToolbarBinding) {
+                    includeToolbarIvButton.visibility = View.GONE
+                    includeToolbarMcvHolder.updateLayoutParams<ConstraintLayout.LayoutParams> {
+                        height = resources.getDimension(R.dimen.dp_40).toInt()
+                    }
+                    includeToolbarTvTitle.gravity = Gravity.START or Gravity.BOTTOM
                 }
             }
         }
@@ -51,6 +65,6 @@ abstract class ToolbarFragment constructor(
     }
 
     enum class ToolbarType(@DrawableRes val backIcon: Int) {
-        BACK(R.drawable.ic_arrow_left_24), EMPTY(0)
+        BACK(R.drawable.ic_arrow_left_24), EMPTY(0), NEWS(0)
     }
 }
