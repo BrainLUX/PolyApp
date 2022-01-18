@@ -13,6 +13,7 @@ import com.spbstu.application.utils.DebounceClickListener
 import com.spbstu.application.utils.DebouncePostHandler
 import com.todkars.shimmer.ShimmerRecyclerView
 
+
 fun View.setDebounceClickListener(
     delay: Long = DebouncePostHandler.DEFAULT_DELAY,
     onClickListener: View.OnClickListener

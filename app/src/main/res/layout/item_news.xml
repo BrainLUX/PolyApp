@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background_secondary"
-    android:paddingBottom="@dimen/dp_16">
+    android:background="@color/background_secondary">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background_primary"
-        app:cardElevation="@dimen/dp_16"
-        app:cardMaxElevation="@dimen/dp_16"
+        app:cardBackgroundColor="@color/background_primary"
+        app:cardElevation="@dimen/dp_4"
+        android:layout_marginBottom="@dimen/dp_8"
         app:cardCornerRadius="@dimen/dp_0">
 
         <LinearLayout
