@@ -15,7 +15,7 @@ class WeekAdapter(
     override fun getItemCount(): Int = TimetableFragment.INFO_TITLES.size
 
     override fun createFragment(position: Int): Fragment {
-        val fragment = DayFragment(viewModel)
+        val fragment = DayFragment(viewModel, position)
         fragment.arguments = Bundle().apply {
             putInt(TimetableFragment.DAY_KEY, position + 1)
         }

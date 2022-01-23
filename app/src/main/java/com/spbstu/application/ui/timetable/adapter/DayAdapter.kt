@@ -6,9 +6,9 @@ import com.spbstu.application.base.BaseAdapter
 import com.spbstu.application.base.BaseViewHolder
 import com.spbstu.application.databinding.ItemLessonTimetableBinding
 import com.spbstu.application.domain.model.Lesson
+import com.spbstu.application.extensions.openLink
 
-class DayAdapter() :
-    BaseAdapter<Lesson, DayAdapter.Holder>() {
+class DayAdapter : BaseAdapter<Lesson, DayAdapter.Holder>() {
 
     inner class Holder(parent: ViewGroup) : BaseViewHolder<Lesson, ItemLessonTimetableBinding>(
         ItemLessonTimetableBinding.inflate(
@@ -18,17 +18,23 @@ class DayAdapter() :
         )
     ) {
 
-        private lateinit var lesson: Lesson
-
         override fun bind(item: Lesson) {
-            lesson = item
-
-            binding.startTime.text = item.start
-            binding.endTime.text = item.end
-            binding.lessonName.text = item.name
-            binding.lessonType.text = item.type
-            binding.lessonPlace.text = item.place
-            binding.teacherName.text = item.teacher
+            with(binding) {
+                itemTimetableTvStart.text = item.start
+                itemTimetableTvEnds.text = item.end
+                itemTimetableTvName.text = item.name
+                itemTimetableTvType.text = item.type
+                itemTimetableTvPlace.text = item.place
+                itemTimetableTvTeacher.text = item.teacher
+                if (item.link.isNotEmpty()) {
+                    binding.itemTimetableMcvHolder.isClickable = true
+                    binding.itemTimetableMcvHolder.setOnClickListener {
+                        itemTimetableMcvHolder.context.openLink(item.link)
+                    }
+                } else {
+                    binding.itemTimetableMcvHolder.isClickable = false
+                }
+            }
         }
 
     }

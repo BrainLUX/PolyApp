@@ -6,91 +6,95 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/start_time"
+        android:id="@+id/item_timetable_tv_start"
         style="@style/TextView.Default.Black"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dp_40"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_12"
+        app:layout_constraintBottom_toTopOf="@id/center_hidden"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Start" />
+        tools:text="10:00" />
 
     <TextView
-        android:id="@+id/end_time"
+        android:id="@+id/item_timetable_tv_ends"
         style="@style/TextView.Default.Gray"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dp_40"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_4"
+        app:layout_constraintStart_toStartOf="@id/item_timetable_tv_start"
+        app:layout_constraintTop_toBottomOf="@+id/center_hidden"
+        tools:text="10:00" />
+
+    <View
+        android:id="@+id/center_hidden"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_1"
+        app:layout_constraintBottom_toBottomOf="@id/item_timetable_mcv_holder"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start_time"
-        tools:text="End" />
+        app:layout_constraintTop_toTopOf="@id/item_timetable_mcv_holder" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+        android:id="@+id/item_timetable_mcv_holder"
         android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_16"
-        android:layout_marginTop="@dimen/dp_4"
-        android:layout_marginEnd="@dimen/dp_16"
-        android:layout_marginBottom="@dimen/dp_4"
-        app:cardCornerRadius="@dimen/dp_10"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:layout_marginVertical="@dimen/dp_8"
+        app:cardCornerRadius="@dimen/dp_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/start_time"
+        app:layout_constraintStart_toEndOf="@+id/item_timetable_tv_start"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dp_16"
+            android:paddingVertical="@dimen/dp_12">
 
             <TextView
-                android:id="@+id/lesson_name"
-                style="@style/TextView.Default.Black"
-                android:layout_width="wrap_content"
+                android:id="@+id/item_timetable_tv_name"
+                style="@style/TextView.H3.Black"
+                android:layout_width="@dimen/dp_0"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_16"
-                android:layout_marginTop="@dimen/dp_4"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Lesson" />
 
             <TextView
-                android:id="@+id/lesson_type"
-                style="@style/TextView.Small"
-                android:layout_width="wrap_content"
+                android:id="@+id/item_timetable_tv_type"
+                style="@style/TextView.Timetable"
+                android:layout_width="@dimen/dp_0"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_4"
-                android:layout_marginEnd="@dimen/dp_16"
-                android:background="@drawable/background_card"
-                android:padding="@dimen/dp_2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="@id/item_timetable_tv_name"
+                app:layout_constraintStart_toStartOf="@id/item_timetable_tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/item_timetable_tv_name"
                 tools:text="Type" />
 
             <TextView
-                android:id="@+id/lesson_place"
-                style="@style/TextView.Small.Gray"
-                android:layout_width="wrap_content"
+                android:id="@+id/item_timetable_tv_place"
+                style="@style/TextView.Timetable"
+                android:layout_width="@dimen/dp_0"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_16"
                 android:layout_marginTop="@dimen/dp_4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_name"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="@id/item_timetable_tv_name"
+                app:layout_constraintStart_toStartOf="@id/item_timetable_tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/item_timetable_tv_type"
                 tools:text="Place" />
 
             <TextView
-                android:id="@+id/teacher_name"
-                style="@style/TextView.Small.Gray"
-                android:layout_width="wrap_content"
+                android:id="@+id/item_timetable_tv_teacher"
+                style="@style/TextView.Timetable"
+                android:layout_width="@dimen/dp_0"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_16"
                 android:layout_marginTop="@dimen/dp_4"
-                android:layout_marginBottom="@dimen/dp_4"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lesson_place"
+                app:layout_constraintEnd_toEndOf="@id/item_timetable_tv_name"
+                app:layout_constraintStart_toStartOf="@id/item_timetable_tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/item_timetable_tv_place"
                 tools:text="Teacher" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

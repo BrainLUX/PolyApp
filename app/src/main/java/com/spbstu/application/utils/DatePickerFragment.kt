@@ -18,7 +18,7 @@ class DatePickerFragment(
         const val CALENDAR_KEY = "com.spbstu.application.utils.SELECTED_DATE"
 
         fun defaultDateFormat(calendar: Calendar): String =
-            SimpleDateFormat("dd MMMM", Locale.getDefault()).format(calendar.time)
+            SimpleDateFormat("dd.MM", Locale.getDefault()).format(calendar.time)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

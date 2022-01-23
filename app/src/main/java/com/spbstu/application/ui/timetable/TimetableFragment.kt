@@ -1,5 +1,6 @@
 package com.spbstu.application.ui.timetable
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -31,41 +32,59 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
     override fun setupViews() {
         val weekAdapter = WeekAdapter(this, viewModel)
 
-        binding.lessonsVp2.adapter = weekAdapter
-        TabLayoutMediator(binding.daysTab, binding.lessonsVp2) { tab, position ->
+        binding.frgTimetableVp2Pages.adapter = weekAdapter
+        TabLayoutMediator(
+            binding.frgTimetableTlTabs,
+            binding.frgTimetableVp2Pages
+        ) { tab, position ->
             tab.text = context?.resources?.getString(INFO_TITLES[position])
         }.attach()
+        var day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
+        day = if (day == 1) 6 else day - 2
+        binding.frgTimetableVp2Pages.currentItem = day
     }
 
+    @SuppressLint("SetTextI18n")
     override fun subscribe() {
         lifecycleScope.launch {
             viewModel.pickData.collect { calendar ->
-                binding.tbToolbar.data.text = DatePickerFragment.defaultDateFormat(calendar)
-
-                // TODO adequate switching
-                //  get(Calendar.DAY_OF_WEEK) returns:
-                //  1) Numbers in the range from 1 to 7
-                //  2) The beginning of the week is Sunday when the tab uses Mon start day
-                var day = calendar.get(Calendar.DAY_OF_WEEK)
-                day = if (day == 1) 6 else day - 2
-                binding.lessonsVp2.currentItem = day
+                binding.frgTimetableVp2Pages.currentItem = 0
+                viewModel.loadData(
+                    "${calendar.get(Calendar.YEAR)}-${calendar.get(Calendar.MONTH) + 1}-${
+                        calendar.get(
+                            Calendar.DAY_OF_MONTH
+                        )
+                    }"
+                )
+                val thisCal = Calendar.getInstance()
+                thisCal.timeInMillis = calendar.timeInMillis
+                thisCal.set(Calendar.DAY_OF_WEEK, 2)
+                val nextCal = Calendar.getInstance()
+                nextCal.timeInMillis = calendar.timeInMillis
+                nextCal.add(Calendar.DAY_OF_YEAR, 7)
+                binding.frgTimetableIncludeToolbar.includeTimetableToolbarTvText.text =
+                    "${DatePickerFragment.defaultDateFormat(thisCal)} - ${
+                        DatePickerFragment.defaultDateFormat(nextCal)
+                    }"
             }
         }
     }
 
     private fun setupListeners() {
-        binding.tbToolbar.nextBtn.setOnClickListener {
+        binding.frgTimetableIncludeToolbar.includeTimetableToolbarIvNext.setOnClickListener {
             viewModel.updateToNextWeek()
         }
 
-        binding.tbToolbar.prevBtn.setOnClickListener {
+        binding.frgTimetableIncludeToolbar.includeTimetableToolbarIvPrev.setOnClickListener {
             viewModel.updateToPrevWeek()
         }
 
-        binding.tbToolbar.data.setOnClickListener {
-            val datePickerFragment = DatePickerFragment(viewModel.pickData.value, DATE_KEY)
+        binding.frgTimetableIncludeToolbar.includeTimetableToolbarTvText.setOnClickListener {
+            val thisCal = Calendar.getInstance()
+            thisCal.timeInMillis = viewModel.pickData.value.timeInMillis
+            thisCal.set(Calendar.DAY_OF_WEEK, 2)
+            val datePickerFragment = DatePickerFragment(thisCal, DATE_KEY)
             val supportFragmentManager = requireActivity().supportFragmentManager
-
             supportFragmentManager.setFragmentResultListener(
                 DATE_KEY,
                 viewLifecycleOwner
@@ -80,13 +99,8 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
             datePickerFragment.show(supportFragmentManager, "DatePickerFragment")
         }
 
-        binding.daysTab.addOnTabSelectedListener(object : OnTabSelectedListener {
+        binding.frgTimetableTlTabs.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-
-                // TODO adequate switching
-                //  get(Calendar.DAY_OF_WEEK) returns:
-                //  1) Numbers in the range from 1 to 7
-                //  2) The beginning of the week is Sunday when the tab uses Mon start day
                 var day = tab.position + 1
                 day = if (day == 7) 1 else day + 1
                 val currentDay = viewModel.pickData.value.get(Calendar.DAY_OF_WEEK)
@@ -102,7 +116,6 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
                     }
 
                     delta += day - currentDay
-                    viewModel.updateToDays(delta)
                 }
             }
 
