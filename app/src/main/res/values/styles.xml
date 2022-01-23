@@ -54,6 +54,14 @@
         <item name="android:textSize">@dimen/sp_10</item>
     </style>
 
+    <style name="TextView.Small.Black" parent="TextView.Small">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextView.Small.Gray" parent="TextView.Small">
+        <item name="android:textColor">@color/menu_icon_disable_primary</item>
+    </style>
+
     <style name="TextView.Tag" parent="TextView.Small">
         <item name="android:textColor">@color/color_secondary</item>
     </style>
@@ -63,6 +71,11 @@
     </style>
 
     <style name="TextView.Default.Gray" parent="TextView.Default">
+        <item name="android:textColor">@color/menu_icon_disable_primary</item>
+    </style>
+
+    <style name="TextView.Timetable" parent="TextView.Default">
+        <item name="android:textSize">@dimen/sp_12</item>
         <item name="android:textColor">@color/menu_icon_disable_primary</item>
     </style>
 
@@ -83,6 +96,10 @@
 
     <style name="TextView.H3.Black" parent="TextView.H3">
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextView.H3.Gray" parent="TextView.H3">
+        <item name="android:textColor">@color/menu_icon_disable_primary</item>
     </style>
 
     <style name="TextView.H1" parent="TextView.Default">
@@ -166,9 +183,22 @@
         <item name="tabTextAppearance">@style/Tab.Default</item>
     </style>
 
+    <style name="TabLayout.Timetable" parent="TabLayout.Default">
+        <item name="tabBackground">@color/white</item>
+        <item name="android:background">@color/white</item>
+        <item name="tabSelectedTextColor">@color/color_primary</item>
+        <item name="tabTextColor">@color/color_primary_dark</item>
+        <item name="tabIndicatorColor">@color/color_primary</item>
+        <item name="tabTextAppearance">@style/Tab.News</item>
+    </style>
+
     <style name="Tab.Default" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
         <item name="android:padding">@dimen/dp_0</item>
         <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="Tab.News" parent="Tab.Default">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
     </style>
 </resources>

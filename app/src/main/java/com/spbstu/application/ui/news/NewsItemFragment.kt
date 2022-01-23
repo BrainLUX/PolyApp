@@ -54,18 +54,19 @@ class NewsItemFragment(private val newsTab: NewsTab) : BaseFragment(R.layout.fra
 
     override fun subscribe() {
         super.subscribe()
-
         lifecycleScope.launch {
             viewModel.newsData.collect {
                 if (it.isNotEmpty()) {
-                    newsAdapter.bindData(it)
-                    binding.frgNewsItemRvList.apply {
-                        (binding.frgNewsItemRvList.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(
-                            0,
-                            -adapterScrollY
-                        )
-                        addOnScrollListener(scrollListener)
-                        hideShimmer()
+                    runCatching {
+                        newsAdapter.bindData(it)
+                        binding.frgNewsItemRvList.apply {
+                            (binding.frgNewsItemRvList.layoutManager as LinearLayoutManager).scrollToPositionWithOffset(
+                                0,
+                                -adapterScrollY
+                            )
+                            addOnScrollListener(scrollListener)
+                            hideShimmer()
+                        }
                     }
                 }
             }

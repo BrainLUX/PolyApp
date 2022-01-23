@@ -14,7 +14,11 @@ import kotlinx.coroutines.launch
 
 
 class NewsFragment :
-    ToolbarFragment(type = ToolbarType.NEWS,contentLayoutId = R.layout.fragment_news, titleResource = R.string.menu_news) {
+    ToolbarFragment(
+        type = ToolbarType.NEWS,
+        contentLayoutId = R.layout.fragment_news,
+        titleResource = R.string.menu_news
+    ) {
 
     override val binding by viewBinding(FragmentNewsBinding::bind)
 
@@ -34,14 +38,16 @@ class NewsFragment :
 
         lifecycleScope.launch {
             viewModel.newsData.collect {
-                viewPagerAdapter = ViewPagerAdapter(this@NewsFragment, it)
-                binding.frgNewsVp2Fragments.adapter = viewPagerAdapter
-                TabLayoutMediator(
-                    binding.frgNewsTlTabs,
-                    binding.frgNewsVp2Fragments
-                ) { tab, position ->
-                    tab.text = it[position].title
-                }.attach()
+                runCatching {
+                    viewPagerAdapter = ViewPagerAdapter(this@NewsFragment, it)
+                    binding.frgNewsVp2Fragments.adapter = viewPagerAdapter
+                    TabLayoutMediator(
+                        binding.frgNewsTlTabs,
+                        binding.frgNewsVp2Fragments
+                    ) { tab, position ->
+                        tab.text = it[position].title
+                    }.attach()
+                }
             }
         }
     }

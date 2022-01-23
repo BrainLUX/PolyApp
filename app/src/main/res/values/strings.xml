@@ -74,4 +74,14 @@
         <item>Столовая</item>
         <item>Кафе</item>
     </array>
+
+    <string name="monday">ПН</string>
+    <string name="tuesday">ВТ</string>
+    <string name="wednesday">СР</string>
+    <string name="thursday">ЧТ</string>
+    <string name="friday">ПТ</string>
+    <string name="saturday">СБ</string>
+    <string name="sunday">ВС</string>
+
+    <string name="timetable_no_data">На выбранный день пар не запланировано</string>
 </resources>
