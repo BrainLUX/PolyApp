@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PolyApp</string>
+    <string name="app_name">Мой Политех</string>
 
     <string name="menu_news">Новости</string>
     <string name="menu_timetable">Расписание</string>
