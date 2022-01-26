@@ -26,25 +26,23 @@ class DayFragment(private val viewModel: TimetableViewModel, private val weekDay
     override fun subscribe() {
         lifecycleScope.launch {
             viewModel.testDay.collect { data ->
-                binding.frgDayRvList.visibility = View.VISIBLE
-                if (data[weekDay + 1] == null) {
-                    dayAdapter.bindData(listOf())
-                    binding.frgDayTvNoData.visibility = View.VISIBLE
-                } else {
-                    dayAdapter.bindData(data[weekDay + 1]!!)
-                    binding.frgDayTvNoData.visibility = View.GONE
-                }
-                binding.frgDayRvList.hideShimmer()
-            }
-        }
-        lifecycleScope.launch {
-            viewModel.stateData.collect { state ->
-                if (state == TimetableViewModel.State.Loading) {
-                    binding.frgDayPbLoading.visibility = View.VISIBLE
-                    binding.frgDayTvNoData.visibility = View.GONE
-                    binding.frgDayRvList.visibility = View.GONE
-                } else {
-                    binding.frgDayPbLoading.visibility = View.GONE
+                runCatching {
+                    if (data != null) {
+                        binding.frgDayPbLoading.visibility = View.GONE
+                        binding.frgDayRvList.visibility = View.VISIBLE
+                        if (data[weekDay + 1] == null) {
+                            dayAdapter.bindData(listOf())
+                            binding.frgDayTvNoData.visibility = View.VISIBLE
+                        } else {
+                            dayAdapter.bindData(data[weekDay + 1]!!)
+                            binding.frgDayTvNoData.visibility = View.GONE
+                        }
+                        binding.frgDayRvList.hideShimmer()
+                    } else {
+                        binding.frgDayTvNoData.visibility = View.GONE
+                        binding.frgDayRvList.visibility = View.GONE
+                        binding.frgDayPbLoading.visibility = View.VISIBLE
+                    }
                 }
             }
         }

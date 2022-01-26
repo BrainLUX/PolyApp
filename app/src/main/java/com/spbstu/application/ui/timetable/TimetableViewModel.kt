@@ -10,19 +10,16 @@ import java.util.*
 
 class TimetableViewModel : BaseViewModel() {
 
-    private val _testDay: MutableStateFlow<MutableMap<Int, List<Lesson>>> =
-        MutableStateFlow(hashMapOf())
-    val testDay get() :StateFlow<MutableMap<Int, List<Lesson>>> = _testDay
+    private val _testDay: MutableStateFlow<MutableMap<Int, List<Lesson>>?> =
+        MutableStateFlow(null)
+    val testDay get() :StateFlow<MutableMap<Int, List<Lesson>>?> = _testDay
 
     private val _pickData: MutableStateFlow<Calendar> =
         MutableStateFlow(Calendar.getInstance())
     val pickData: StateFlow<Calendar> = _pickData
 
-    private val _stateData: MutableStateFlow<State> = MutableStateFlow(State.Loaded)
-    val stateData get() :StateFlow<State> = _stateData
-
+    var group = "33812"
     private var queryCount = 0
-
 
     init {
         _pickData.value = Calendar.getInstance()
@@ -30,9 +27,8 @@ class TimetableViewModel : BaseViewModel() {
 
     fun loadData(date: String) {
         val thisQuery = ++queryCount
-        _testDay.value = hashMapOf()
-        _stateData.value = State.Loading
-        TimetableApi.getTimetable(date) {
+        _testDay.value = null
+        TimetableApi.getTimetable(group, date) {
             val tmpMap = hashMapOf<Int, List<Lesson>>()
             it?.let { timetableDTO ->
                 timetableDTO.daysData.forEach { dayDto ->
@@ -44,7 +40,6 @@ class TimetableViewModel : BaseViewModel() {
                 }
                 if (thisQuery == queryCount) {
                     _testDay.value = tmpMap
-                    _stateData.value = State.Loaded
                 }
             }
         }
@@ -70,10 +65,5 @@ class TimetableViewModel : BaseViewModel() {
             set(Calendar.MONTH, calendar.get(Calendar.MONTH))
             set(Calendar.DAY_OF_MONTH, calendar.get(Calendar.DAY_OF_MONTH))
         }
-    }
-
-    sealed class State {
-        object Loading : State()
-        object Loaded : State()
     }
 }

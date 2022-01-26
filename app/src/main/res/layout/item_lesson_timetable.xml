@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/item_timetable_tv_start"
         style="@style/TextView.Default.Black"
-        android:layout_width="@dimen/dp_40"
+        android:layout_width="@dimen/dp_45"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_12"
         app:layout_constraintBottom_toTopOf="@id/center_hidden"
@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/item_timetable_tv_ends"
         style="@style/TextView.Default.Gray"
-        android:layout_width="@dimen/dp_40"
+        android:layout_width="@dimen/dp_45"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/item_timetable_tv_start"
         app:layout_constraintTop_toBottomOf="@+id/center_hidden"

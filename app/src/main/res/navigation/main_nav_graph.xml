@@ -10,10 +10,4 @@
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
     </fragment>
-
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.spbstu.application.ui.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
 </navigation>

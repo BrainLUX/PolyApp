@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/frg_groups__ll_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_56"
+        android:background="@color/color_primary"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/frg_groups__iv_button"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="match_parent"
+            android:background="?selectableItemBackground"
+            android:contentDescription="@string/description_back"
+            android:padding="@dimen/dp_16"
+            android:src="@drawable/ic_arrow_left_24" />
+
+        <EditText
+            android:id="@+id/frg_groups__et_search"
+            style="@style/TextView.Default"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_weight="1"
+            android:backgroundTint="@color/background_primary"
+            android:gravity="center_vertical|start"
+            android:hint="@string/groups_hint"
+            android:inputType="phone"
+            android:lines="1"
+            android:padding="@dimen/dp_16"
+            android:textColorHint="@color/text_color_primary"
+            tools:ignore="Autofill,InefficientWeight" />
+    </LinearLayout>
+
+    <com.todkars.shimmer.ShimmerRecyclerView
+        android:id="@+id/frg_groups__rv_list"
+        style="@style/RecyclerView.Linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_enquiry" />
+
+
+    <TextView
+        android:id="@+id/frg_groups__tv_no_data"
+        style="@style/TextView.Default.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:gravity="center"
+        android:text="@string/groups_no_data"
+        android:visibility="gone" />
+</LinearLayout>

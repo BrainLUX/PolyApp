@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayoutMediator
 import com.spbstu.application.R
+import com.spbstu.application.app.App
 import com.spbstu.application.base.BaseFragment
 import com.spbstu.application.databinding.FragmentTimetableBinding
 import com.spbstu.application.extensions.viewBinding
@@ -31,7 +33,7 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
 
     override fun setupViews() {
         val weekAdapter = WeekAdapter(this, viewModel)
-
+        setGroup()
         binding.frgTimetableVp2Pages.adapter = weekAdapter
         TabLayoutMediator(
             binding.frgTimetableTlTabs,
@@ -41,14 +43,17 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
         }.attach()
         var day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
         day = if (day == 1) 6 else day - 2
-        binding.frgTimetableVp2Pages.currentItem = day
+        binding.frgTimetableVp2Pages.setCurrentItem(day, false)
+
+        binding.frgTimetableFabSettings.setOnClickListener {
+            findNavController().navigate(R.id.action_timetableFragment_to_facultiesFragment)
+        }
     }
 
     @SuppressLint("SetTextI18n")
     override fun subscribe() {
         lifecycleScope.launch {
             viewModel.pickData.collect { calendar ->
-                binding.frgTimetableVp2Pages.currentItem = 0
                 viewModel.loadData(
                     "${calendar.get(Calendar.YEAR)}-${calendar.get(Calendar.MONTH) + 1}-${
                         calendar.get(
@@ -60,7 +65,7 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
                 thisCal.timeInMillis = calendar.timeInMillis
                 thisCal.set(Calendar.DAY_OF_WEEK, 2)
                 val nextCal = Calendar.getInstance()
-                nextCal.timeInMillis = calendar.timeInMillis
+                nextCal.timeInMillis = thisCal.timeInMillis
                 nextCal.add(Calendar.DAY_OF_YEAR, 7)
                 binding.frgTimetableIncludeToolbar.includeTimetableToolbarTvText.text =
                     "${DatePickerFragment.defaultDateFormat(thisCal)} - ${
@@ -70,13 +75,20 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
         }
     }
 
+    private fun setGroup() {
+        viewModel.group =
+            App.getInstance().sharedPreferences.getString(GROUP_KEY, viewModel.group).toString()
+    }
+
     private fun setupListeners() {
         binding.frgTimetableIncludeToolbar.includeTimetableToolbarIvNext.setOnClickListener {
             viewModel.updateToNextWeek()
+            binding.frgTimetableVp2Pages.setCurrentItem(0, true)
         }
 
         binding.frgTimetableIncludeToolbar.includeTimetableToolbarIvPrev.setOnClickListener {
             viewModel.updateToPrevWeek()
+            binding.frgTimetableVp2Pages.setCurrentItem(0, true)
         }
 
         binding.frgTimetableIncludeToolbar.includeTimetableToolbarTvText.setOnClickListener {
@@ -92,7 +104,10 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
                 if (resultKey == DATE_KEY) {
                     val calendar =
                         bundle.getSerializable(DatePickerFragment.CALENDAR_KEY) as Calendar
+                    var day = calendar.get(Calendar.DAY_OF_WEEK)
+                    day = if (day == 1) 6 else day - 2
 
+                    binding.frgTimetableVp2Pages.setCurrentItem(day, true)
                     viewModel.updatePickedDate(calendar)
                 }
             }
@@ -127,6 +142,8 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
     companion object {
         const val DAY_KEY = "com.spbstu.application.TIMETABLE_DAY_KEY"
         const val DATE_KEY = "com.spbstu.application.TIMETABLE_DATE_KEY"
+
+        const val GROUP_KEY = "com.spbstu.application.GROUP_KEY"
 
         val INFO_TITLES = arrayOf(
             R.string.monday,

@@ -47,7 +47,7 @@
     </array>
     <string name="help_add_title_hint">Как бы Вы назвали просьбу?</string>
     <string name="help_add_desc_hint">Как бы Вы описали просьбу?</string>
-    <string name="help_add_link_hint">Как у Вас ID вконтакте</string>
+    <string name="help_add_link_hint">Какой у Вас ID вконтакте?</string>
     <string name="help_add_input_error">Поле не может быть пустым</string>
 
     <string name="career_title">Информация о стажировке</string>
@@ -84,4 +84,10 @@
     <string name="sunday">ВС</string>
 
     <string name="timetable_no_data">На выбранный день пар не запланировано</string>
+    <string name="timetable_choose_group">Выбрать группу</string>
+
+    <string name="faculties_title">Выбрите подразделение</string>
+
+    <string name="groups_hint">Поиск среди групп</string>
+    <string name="groups_no_data">Нет групп для отображения</string>
 </resources>
