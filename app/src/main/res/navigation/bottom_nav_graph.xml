@@ -19,11 +19,6 @@
             app:popExitAnim="@anim/close_fragment_slide_right" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.spbstu.application.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
         android:id="@+id/servicesFragment"
         android:name="com.spbstu.application.ui.services.ServicesFragment"
         android:label="fragment_services"
@@ -96,7 +91,15 @@
         android:id="@+id/timetableFragment"
         android:name="com.spbstu.application.ui.timetable.TimetableFragment"
         android:label="fragment_timetable"
-        tools:layout="@layout/fragment_timetable" />
+        tools:layout="@layout/fragment_timetable">
+        <action
+            android:id="@+id/action_timetableFragment_to_facultiesFragment"
+            app:destination="@id/facultiesFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/buildingsFragment"
@@ -199,4 +202,32 @@
         android:name="com.spbstu.application.ui.news_info.NewsInfoFragment"
         android:label="NewsInfoFragment"
         tools:layout="@layout/fragment_news_info" />
+    <fragment
+        android:id="@+id/groupsFragment"
+        android:name="com.spbstu.application.ui.groups.GroupsFragment"
+        android:label="GroupsFragment"
+        tools:layout="@layout/fragment_groups">
+        <action
+            android:id="@+id/action_groupsFragment_to_timetableFragment"
+            app:destination="@id/timetableFragment"
+            app:enterAnim="@anim/open_fragment_slide_left"
+            app:exitAnim="@anim/close_fragment_slide_right"
+            app:popEnterAnim="@anim/open_fragment_slide_right"
+            app:popExitAnim="@anim/close_fragment_slide_left"
+            app:popUpTo="@id/timetableFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/facultiesFragment"
+        android:name="com.spbstu.application.ui.faculties.FacultiesFragment"
+        android:label="FacultiesFragment"
+        tools:layout="@layout/fragment_faculties">
+        <action
+            android:id="@+id/action_facultiesFragment_to_groupsFragment"
+            app:destination="@id/groupsFragment"
+            app:enterAnim="@anim/open_fragment_slide_right"
+            app:exitAnim="@anim/close_fragment_slide_left"
+            app:popEnterAnim="@anim/open_fragment_slide_left"
+            app:popExitAnim="@anim/close_fragment_slide_right" />
+    </fragment>
 </navigation>

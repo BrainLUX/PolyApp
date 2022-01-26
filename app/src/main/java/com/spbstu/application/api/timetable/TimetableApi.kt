@@ -9,8 +9,12 @@ object TimetableApi {
     private val service: TimetableService =
         TimetableRetrofitClient.retrofit.create(TimetableService::class.java)
 
-    fun getTimetable(date: String = "", onComplete: (TimetableDTO?) -> Unit) {
-        service.getTimetable(date)
+    fun getTimetable(
+        group: String,
+        date: String,
+        onComplete: (TimetableDTO?) -> Unit
+    ) {
+        service.getTimetable(group, date)
             .enqueue(CallbackImpl<TimetableDTO>(tag) { result, e ->
                 if (e != null) {
                     return@CallbackImpl

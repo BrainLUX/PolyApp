@@ -3,6 +3,7 @@ package com.spbstu.application.app;
 import android.app.Application;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.widget.Toast;
 
 import androidx.annotation.StringRes;
@@ -33,5 +34,9 @@ public class App extends Application implements LifecycleObserver {
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     public void onDestroy() {
         ((NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE)).cancelAll();
+    }
+
+    public SharedPreferences getSharedPreferences() {
+        return getSharedPreferences("APP_PREFERENCES", Context.MODE_PRIVATE);
     }
 }
