@@ -9,14 +9,21 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="color_primary">#21a649</color>
+    <color name="color_primary_dark">#616161</color>
     <color name="color_secondary">#105d3b</color>
     <color name="color_transparent">#6e232323</color>
     <color name="color_semitransparent">#1e232323</color>
 
     <color name="background_primary">#FFFFFF</color>
+    <color name="background_secondary">#eeeeee</color>
     <color name="menu_icon_disable_primary">#8E8E8E</color>
 
     <color name="text_color_primary">#FFFFFF</color>
+    <color name="text_color_primary_dark">#AAFFFFFF</color>
     <color name="text_color_secondary">#325a46</color>
+
+    <color name="error_color">#E42323</color>
+
+    <color name="shimmer_color">#A7A6A6</color>
 
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="1000">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@+id/frg_event_info__nsv_scroll"
+            app:touchAnchorSide="top" />
+    </Transition>
+    <ConstraintSet android:id="@+id/start" />
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/frg_event_info__fl_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/frg_event_info__layout_toolbar" />
+        <Constraint
+            android:id="@id/frg_event_info__tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/frg_event_info__iv_background" />
+    </ConstraintSet>
+</MotionScene>

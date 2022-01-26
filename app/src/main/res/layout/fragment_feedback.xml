@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/frg_feedback__layout_toolbar"
+        layout="@layout/include_toolbar" />
+
+    <TextView
+        android:id="@+id/frg_feedback__tv_title"
+        style="@style/TextView.Default.Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:text="@string/feedback_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_feedback__layout_toolbar" />
+
+    <include
+        android:id="@+id/frg_feedback__layout_input_email"
+        layout="@layout/include_input"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintEnd_toEndOf="@id/frg_feedback__tv_title"
+        app:layout_constraintStart_toStartOf="@id/frg_feedback__tv_title"
+        app:layout_constraintTop_toBottomOf="@id/frg_feedback__tv_title" />
+
+    <include
+        android:id="@+id/frg_feedback__layout_input_message"
+        layout="@layout/include_input"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/frg_feedback__tv_title"
+        app:layout_constraintStart_toStartOf="@id/frg_feedback__tv_title"
+        app:layout_constraintTop_toBottomOf="@id/frg_feedback__layout_input_email" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/frg_feedback__mb_send"
+        style="@style/Button.Default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_feedback__layout_input_message"
+        app:layout_constraintVertical_bias="1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

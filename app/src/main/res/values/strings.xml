@@ -9,6 +9,7 @@
     <string name="description_service">Сервис</string>
     <string name="description_back">Назад</string>
     <string name="description_building">Фото здания</string>
+    <string name="description_news">Фото новости</string>
 
     <string name="service_actual_title">Актуальное</string>
     <string name="service_university_title">Университет</string>
@@ -24,5 +25,63 @@
     <string name="support_download">Скачать образец обращения</string>
     <string name="support_hint">Поиск среди категорий</string>
 
-    <string name="login_title">Введите логин</string>
+    <string name="help_address">Размещено в %s</string>
+    <string name="help_button">Откликнуться</string>
+    <string name="help_info_title">Информация о просьбе</string>
+    <string name="help_add_title">Создать новую просьбу</string>
+    <string name="help_add_button">Создать новую просьбу</string>
+    <string name="help_add_choose_tags">Выберите теги</string>
+    <array name="help_tags">
+        <item>Учёба</item>
+        <item>Спорт</item>
+        <item>Киберспорт</item>
+        <item>Помощь</item>
+        <item>Срочно</item>
+        <item>Документы</item>
+        <item>Развлечения</item>
+        <item>Досуг</item>
+        <item>Разное</item>
+        <item>Реквизит</item>
+        <item>Мероприятия</item>
+        <item>Еда</item>
+    </array>
+    <string name="help_add_title_hint">Как бы Вы назвали просьбу?</string>
+    <string name="help_add_desc_hint">Как бы Вы описали просьбу?</string>
+    <string name="help_add_link_hint">Как у Вас ID вконтакте</string>
+    <string name="help_add_input_error">Поле не может быть пустым</string>
+
+    <string name="career_title">Информация о стажировке</string>
+    <string name="career_link">Перейти на сайт</string>
+
+    <string name="club_title">Информация о клубе</string>
+    <string name="club_links">Ссылки в соц. сетях</string>
+
+    <string name="event_info_title">Информация о мероприятии</string>
+
+    <string name="error_network">Подключение к интернету отсутствует, попробуйте позднее.</string>
+
+    <string name="enquiry_title">Информация о справке</string>
+
+    <string name="feedback_title">Опишите нам проблему и мы постараемся её решить как можно скорее</string>
+    <string name="feedback_button">Отправить</string>
+    <string name="feedback_email_hint">Email</string>
+    <string name="feedback_message_hint">Проблема</string>
+    <string name="feedback_sent">Спасибо за обращение! Мы постараемся решить проблему как можно быстрее.</string>
+
+    <string name="eat_title">Где находится заведение</string>
+    <array name="eat_tags">
+        <item>Все</item>
+        <item>Столовая</item>
+        <item>Кафе</item>
+    </array>
+
+    <string name="monday">ПН</string>
+    <string name="tuesday">ВТ</string>
+    <string name="wednesday">СР</string>
+    <string name="thursday">ЧТ</string>
+    <string name="friday">ПТ</string>
+    <string name="saturday">СБ</string>
+    <string name="sunday">ВС</string>
+
+    <string name="timetable_no_data">На выбранный день пар не запланировано</string>
 </resources>

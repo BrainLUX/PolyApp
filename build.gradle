@@ -46,6 +46,8 @@ buildscript {
 
         jsoupVersion = "1.11.3"
 
+        chipLayoutVersion = "1.0.0"
+
         kotlinDep = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
         androidxCoreDep = "androidx.core:core-ktx:$coreVersion"
         androidDep = "androidx.appcompat:appcompat:$supportVersion"
@@ -96,6 +98,8 @@ buildscript {
 
         expandableDep = "com.github.cachapa:ExpandableLayout:$expandableVersion"
         jsoupDep = "org.jsoup:jsoup:$jsoupVersion"
+
+        chipLayoutDep = "com.github.Dboy233:ChipsLayoutManagerX:$chipLayoutVersion"
 
     }
     repositories {

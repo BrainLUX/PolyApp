@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dg_club__rl_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88000000"
+    android:gravity="top|center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dp_24">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dg_club__cv_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="@color/background_primary"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:cardElevation="@dimen/dp_0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextView.H3.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_16"
+                android:text="@string/club_title" />
+
+            <TextView
+                android:id="@+id/dg_club__tv_description"
+                style="@style/TextView.Default.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dp_24"
+                tools:text="@string/support_documents_title" />
+
+            <TextView
+                style="@style/TextView.H3.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:gravity="center"
+                android:padding="@dimen/dp_16"
+                android:text="@string/club_links" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dg_club__rv_list"
+                style="@style/RecyclerView.Linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_16"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_link" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

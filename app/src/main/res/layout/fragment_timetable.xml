@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.timetable.TimetableFragment"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.timetable.TimetableFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+        android:id="@+id/frg_timetable__include_toolbar"
+        layout="@layout/include_timetable_toolbar" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/frg_timetable__tl_tabs"
+        style="@style/TabLayout.Timetable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/frg_news__layout_toolbar" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/frg_timetable__vp2_pages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/dp_4" />
+
+</LinearLayout>

@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.news.NewsFragment">
+    android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/frg_news__rv_list"
-        style="@style/RecyclerView.Linear"
+    <include
+        android:id="@+id/frg_news__layout_toolbar"
+        layout="@layout/include_toolbar" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/frg_news__mcv_tabs_holder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_template" />
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/color_transparent"
+        app:cardCornerRadius="@dimen/dp_0"
+        app:cardElevation="@dimen/dp_4"
+        app:layout_constraintTop_toBottomOf="@id/frg_news__layout_toolbar">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/frg_news__tl_tabs"
+            style="@style/TabLayout.Default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/frg_news__vp2_fragments"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_news__mcv_tabs_holder" />
 </androidx.constraintlayout.widget.ConstraintLayout>

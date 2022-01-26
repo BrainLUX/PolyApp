@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dp_16"
+    android:paddingVertical="@dimen/dp_8">
+
+    <TextView
+        android:id="@+id/item_eat__tv_title"
+        style="@style/TextView.H2.Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        tools:text="Текст помощи" />
+
+    <TextView
+        android:id="@+id/item_eat__tv_address"
+        style="@style/TextView.Default.Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:ellipsize="end"
+        tools:text="Текст помощи" />
+
+    <TextView
+        android:id="@+id/item_eat__tv_time"
+        style="@style/TextView.Default.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        tools:text="Размещено в " />
+</LinearLayout>

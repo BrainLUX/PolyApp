@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dg_eat__rl_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88000000"
+    android:gravity="top|center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dp_24">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dg_eat__cv_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="@color/background_primary"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:cardElevation="@dimen/dp_0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dg_eat__tv_title"
+                style="@style/TextView.H3.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_16"
+                android:text="@string/eat_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/dg_eat__iv_map"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_300"
+                android:scaleType="fitCenter"
+                app:layout_constraintTop_toBottomOf="@id/dg_eat__tv_title"
+                tools:ignore="ContentDescription" />
+
+            <ProgressBar
+                android:id="@+id/dg_eat__pb_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/color_primary"
+                android:theme="@style/Theme.PolyApp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dg_eat__tv_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

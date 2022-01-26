@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layoutDescription="@xml/fragment_event_scene"
+    tools:context=".ui.building.BuildingFragment">
+
+    <include
+        android:id="@+id/frg_event_info__layout_toolbar"
+        layout="@layout/include_toolbar" />
+
+    <FrameLayout
+        android:id="@+id/frg_event_info__fl_holder"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_300"
+        app:layout_constraintTop_toBottomOf="@id/frg_event_info__layout_toolbar">
+
+        <ImageView
+            android:id="@+id/frg_event_info__iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_placeholder"
+            android:contentDescription="@string/description_building"
+            android:foreground="@color/color_transparent"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/frg_event_info__tv_title"
+            style="@style/TextView.H2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@id/frg_event_info__iv_background"
+            tools:text="Длинный текст длинный текст" />
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/frg_event_info__nsv_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frg_event_info__fl_holder">
+
+        <TextView
+            android:id="@+id/frg_event_info__tv_description"
+            style="@style/TextView.Default.Black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_16"
+            tools:text="Длинный текст длинный текст" />
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.motion.widget.MotionLayout>

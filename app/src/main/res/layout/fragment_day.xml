@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.todkars.shimmer.ShimmerRecyclerView
+        android:id="@+id/frg_day__rv_list"
+        style="@style/RecyclerView.Linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_lesson_timetable" />
+
+    <TextView
+        android:id="@+id/frg_day__tv_no_data"
+        style="@style/TextView.Default.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:gravity="center"
+        android:text="@string/timetable_no_data"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/frg_day__pb_loading"
+        android:layout_width="@dimen/dp_64"
+        android:layout_height="@dimen/dp_64"
+        android:layout_gravity="center" />
+</FrameLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingHorizontal="@dimen/dp_16"
+    android:paddingVertical="@dimen/dp_8">
+
+    <TextView
+        android:id="@+id/shimmer_help__tv_title"
+        style="@style/TextView.H2.Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/shimmer_color"
+        android:ellipsize="end" />
+
+    <TextView
+        android:id="@+id/item_help__tv_created_at"
+        style="@style/TextView.Default.Gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shimmer_help__tv_title"
+        android:layout_marginTop="@dimen/dp_4"
+        android:background="@color/shimmer_color" />
+
+    <View
+        android:id="@+id/item_help__rv_tags"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_32"
+        android:layout_below="@id/item_help__tv_created_at"
+        android:layout_marginTop="@dimen/dp_4"
+        android:background="@color/shimmer_color" />
+</RelativeLayout>

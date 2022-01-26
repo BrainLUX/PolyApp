@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_56"
+    android:background="@color/color_primary"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/include_timetable_toolbar__iv_prev"
+        android:layout_width="@dimen/dp_56"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:contentDescription="@string/description_back"
+        android:padding="@dimen/dp_16"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/include_timetable_toolbar__tv_text"
+        style="@style/TextView.H2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_56"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/include_timetable_toolbar__iv_next"
+        app:layout_constraintStart_toEndOf="@+id/include_timetable_toolbar__iv_prev"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="InefficientWeight"
+        tools:text="14 May" />
+
+    <ImageView
+        android:id="@+id/include_timetable_toolbar__iv_next"
+        android:layout_width="@dimen/dp_56"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:contentDescription="@string/description_back"
+        android:padding="@dimen/dp_16"
+        android:src="@drawable/ic_baseline_arrow_forward_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
