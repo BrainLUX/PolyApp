@@ -33,8 +33,10 @@ object FirebaseServicesApi {
             .get()
             .addOnSuccessListener { snapshot ->
                 val service = snapshot.toObject(Service::class.java)
-                service!!.serviceId = snapshot.id
-                onItemLoaded(service)
+                service?.let {
+                    service.serviceId = snapshot.id
+                    onItemLoaded(service)
+                }
             }
     }
 

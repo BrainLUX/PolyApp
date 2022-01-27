@@ -48,6 +48,8 @@ buildscript {
 
         chipLayoutVersion = "1.0.0"
 
+        photoViewVersion = "2.0.0"
+
         kotlinDep = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
         androidxCoreDep = "androidx.core:core-ktx:$coreVersion"
         androidDep = "androidx.appcompat:appcompat:$supportVersion"
@@ -100,6 +102,8 @@ buildscript {
         jsoupDep = "org.jsoup:jsoup:$jsoupVersion"
 
         chipLayoutDep = "com.github.Dboy233:ChipsLayoutManagerX:$chipLayoutVersion"
+
+        photoViewDep = "com.github.chrisbanes:PhotoView:$photoViewVersion"
 
     }
     repositories {

@@ -1,5 +1,6 @@
 package com.spbstu.application.ui.help_add
 
+import android.text.InputType
 import android.view.Gravity
 import android.view.View
 import androidx.core.widget.addTextChangedListener
@@ -62,6 +63,8 @@ class HelpAddFragment :
             frgHelpInfoLayoutInputTitle.setupTextInputLayout(R.string.help_add_title_hint)
             frgHelpInfoLayoutInputDesc.setupTextInputLayout(R.string.help_add_desc_hint)
             frgHelpInfoLayoutInputLink.setupTextInputLayout(R.string.help_add_link_hint)
+            frgHelpInfoLayoutInputLink.includeInputEtInput.inputType =
+                InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_SIGNED
             listOf(
                 frgHelpInfoLayoutInputTitle,
                 frgHelpInfoLayoutInputDesc,

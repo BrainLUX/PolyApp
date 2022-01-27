@@ -34,7 +34,7 @@
                 android:text="@string/eat_title"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <com.github.chrisbanes.photoview.PhotoView
                 android:id="@+id/dg_eat__iv_map"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_300"

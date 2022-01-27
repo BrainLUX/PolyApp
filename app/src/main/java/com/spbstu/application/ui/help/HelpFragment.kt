@@ -49,7 +49,7 @@ class HelpFragment :
         super.subscribe()
         lifecycleScope.launch {
             viewModel.helpData.collect {
-                if (it.isNotEmpty()) {
+                if (it != null) {
                     helpAdapter.bindData(it)
                     binding.frgHelpRvList.hideShimmer()
                 }

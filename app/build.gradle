@@ -90,6 +90,7 @@ dependencies {
 
     implementation jsoupDep
     implementation chipLayoutDep
+    implementation photoViewDep
 
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

@@ -61,7 +61,7 @@ class HelpInfoFragment :
 
     companion object {
         private const val HELP_KEY = "com.spbstu.application.HELP_KEY"
-        private const val VK_LINK = "https://vk.com/"
+        private const val VK_LINK = "https://vk.com/id"
 
         fun makeBundle(help: Help): Bundle = bundleOf(HELP_KEY to help)
     }
