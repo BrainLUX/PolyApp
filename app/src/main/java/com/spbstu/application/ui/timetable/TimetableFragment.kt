@@ -14,6 +14,7 @@ import com.spbstu.application.app.App
 import com.spbstu.application.base.BaseFragment
 import com.spbstu.application.databinding.FragmentTimetableBinding
 import com.spbstu.application.extensions.viewBinding
+import com.spbstu.application.ui.faculties.FacultiesFragment
 import com.spbstu.application.ui.timetable.adapter.WeekAdapter
 import com.spbstu.application.utils.DatePickerFragment
 import kotlinx.coroutines.flow.collect
@@ -78,6 +79,12 @@ class TimetableFragment : BaseFragment(R.layout.fragment_timetable) {
     private fun setGroup() {
         viewModel.group =
             App.getInstance().sharedPreferences.getString(GROUP_KEY, viewModel.group).toString()
+        if (viewModel.group.isEmpty()) {
+            findNavController().navigate(
+                R.id.action_timetableFragment_to_facultiesFragment_no_anim,
+                FacultiesFragment.makeBundle(true)
+            )
+        }
     }
 
     private fun setupListeners() {

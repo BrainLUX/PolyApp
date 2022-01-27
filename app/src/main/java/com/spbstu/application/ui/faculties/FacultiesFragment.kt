@@ -1,6 +1,8 @@
 package com.spbstu.application.ui.faculties
 
+import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -40,6 +42,7 @@ class FacultiesFragment : ToolbarFragment(
 
     override fun setupViews() {
         initAdapters()
+        setupFromArguments()
     }
 
     override fun subscribe() {
@@ -67,5 +70,20 @@ class FacultiesFragment : ToolbarFragment(
         with(binding) {
             frgFacultiesRvList.setup(facultiesAdapter, R.layout.shimmer_support)
         }
+    }
+
+    private fun setupFromArguments() {
+        arguments?.let {
+            if (it.containsKey(NO_GROUP_KEY)) {
+                hideBackButton()
+            }
+        }
+    }
+
+    companion object {
+        private const val NO_GROUP_KEY = "com.spbstu.application.NO_GROUP_KEY"
+
+        fun makeBundle(noGroup: Boolean): Bundle = bundleOf(NO_GROUP_KEY to noGroup)
+
     }
 }

@@ -99,6 +99,9 @@
             app:exitAnim="@anim/close_fragment_slide_left"
             app:popEnterAnim="@anim/open_fragment_slide_left"
             app:popExitAnim="@anim/close_fragment_slide_right" />
+        <action
+            android:id="@+id/action_timetableFragment_to_facultiesFragment_no_anim"
+            app:destination="@id/facultiesFragment" />
     </fragment>
 
     <fragment
