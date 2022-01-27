@@ -32,6 +32,10 @@ abstract class ToolbarFragment constructor(
         layoutToolbarBinding.includeToolbarTvTitle.text = text
     }
 
+    fun hideBackButton() {
+        layoutToolbarBinding.includeToolbarIvButton.visibility = View.GONE
+    }
+
     protected abstract fun getToolbarLayout(): View
 
     private fun setToolbar() {

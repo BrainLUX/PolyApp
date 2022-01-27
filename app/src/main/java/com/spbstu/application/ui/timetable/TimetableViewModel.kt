@@ -18,7 +18,7 @@ class TimetableViewModel : BaseViewModel() {
         MutableStateFlow(Calendar.getInstance())
     val pickData: StateFlow<Calendar> = _pickData
 
-    var group = "33812"
+    var group = ""
     private var queryCount = 0
 
     init {

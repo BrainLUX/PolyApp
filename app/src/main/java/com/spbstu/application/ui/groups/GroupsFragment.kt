@@ -92,16 +92,16 @@ class GroupsFragment : BaseFragment(contentLayoutId = R.layout.fragment_groups) 
 
     private fun setupFromArguments() {
         with(requireArguments()) {
-            getString(GROUP_LINK_KEY)?.let {
+            getString(GROUP_KEY)?.let {
                 viewModel.link = it
             }
         }
     }
 
     companion object {
-        private const val GROUP_LINK_KEY = "com.spbstu.application.GROUP_LINK_KEY"
+        private const val GROUP_KEY = "com.spbstu.application.GROUP_KEY"
 
-        fun makeBundle(link: String): Bundle = bundleOf(GROUP_LINK_KEY to link)
+        fun makeBundle(group: String): Bundle = bundleOf(GROUP_KEY to group)
 
     }
 }
