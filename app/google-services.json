@@ -1,10 +1,48 @@
 {
   "project_info": {
     "project_number": "853636266075",
+    "firebase_url": "https://polyapp-49af6-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "polyapp-49af6",
     "storage_bucket": "polyapp-49af6.appspot.com"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853636266075:android:0fa69ac2d704f154a3277e",
+        "android_client_info": {
+          "package_name": "com.brainlux.polyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "853636266075-qgduft3oeg40sq18sc13e8prlkh41st5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.brainlux.polyapp",
+            "certificate_hash": "3c0ca8f34419e698a8567db3ca9ca19131f41634"
+          }
+        },
+        {
+          "client_id": "853636266075-1t84reoqhduva3fa0ngs82egak1qm3nn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0qrBcVNIW9Ht4O_DEcUBa25kxj_sJhVY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "853636266075-1t84reoqhduva3fa0ngs82egak1qm3nn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:853636266075:android:1962a257bd5b39eea3277e",

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.spbstu.application.ui.news.NewsFragment"
+        android:name="com.brainlux.polyapp.ui.news.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news">
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/servicesFragment"
-        android:name="com.spbstu.application.ui.services.ServicesFragment"
+        android:name="com.brainlux.polyapp.ui.services.ServicesFragment"
         android:label="fragment_services"
         tools:layout="@layout/fragment_services">
         <action
@@ -89,7 +89,7 @@
     </fragment>
     <fragment
         android:id="@+id/timetableFragment"
-        android:name="com.spbstu.application.ui.timetable.TimetableFragment"
+        android:name="com.brainlux.polyapp.ui.timetable.TimetableFragment"
         android:label="fragment_timetable"
         tools:layout="@layout/fragment_timetable">
         <action
@@ -106,7 +106,7 @@
 
     <fragment
         android:id="@+id/buildingsFragment"
-        android:name="com.spbstu.application.ui.buildings.BuildingsFragment"
+        android:name="com.brainlux.polyapp.ui.buildings.BuildingsFragment"
         android:label="fragment_buildings"
         tools:layout="@layout/fragment_buildings">
         <action
@@ -119,17 +119,17 @@
     </fragment>
     <fragment
         android:id="@+id/buildingFragment"
-        android:name="com.spbstu.application.ui.building.BuildingFragment"
+        android:name="com.brainlux.polyapp.ui.building.BuildingFragment"
         android:label="BuildingFragment"
         tools:layout="@layout/fragment_building" />
     <fragment
         android:id="@+id/supportFragment"
-        android:name="com.spbstu.application.ui.support.SupportFragment"
+        android:name="com.brainlux.polyapp.ui.support.SupportFragment"
         android:label="SupportFragment"
         tools:layout="@layout/fragment_support" />
     <fragment
         android:id="@+id/helpFragment"
-        android:name="com.spbstu.application.ui.help.HelpFragment"
+        android:name="com.brainlux.polyapp.ui.help.HelpFragment"
         android:label="HelpFragment"
         tools:layout="@layout/fragment_help">
         <action
@@ -149,27 +149,27 @@
     </fragment>
     <fragment
         android:id="@+id/helpInfoFragment"
-        android:name="com.spbstu.application.ui.help_info.HelpInfoFragment"
+        android:name="com.brainlux.polyapp.ui.help_info.HelpInfoFragment"
         android:label="HelpInfoFragment"
         tools:layout="@layout/fragment_help_info" />
     <fragment
         android:id="@+id/helpAddFragment"
-        android:name="com.spbstu.application.ui.help_add.HelpAddFragment"
+        android:name="com.brainlux.polyapp.ui.help_add.HelpAddFragment"
         android:label="HelpAddFragment"
         tools:layout="@layout/fragment_help_add" />
     <fragment
         android:id="@+id/careersFragment"
-        android:name="com.spbstu.application.ui.careers.CareersFragment"
+        android:name="com.brainlux.polyapp.ui.careers.CareersFragment"
         android:label="CareersFragment"
         tools:layout="@layout/fragment_careers" />
     <fragment
         android:id="@+id/clubsFragment"
-        android:name="com.spbstu.application.ui.clubs.ClubsFragment"
+        android:name="com.brainlux.polyapp.ui.clubs.ClubsFragment"
         android:label="ClubsFragment"
         tools:layout="@layout/fragment_clubs" />
     <fragment
         android:id="@+id/eventsFragment"
-        android:name="com.spbstu.application.ui.events.EventsFragment"
+        android:name="com.brainlux.polyapp.ui.events.EventsFragment"
         android:label="EventsFragment"
         tools:layout="@layout/fragment_events">
         <action
@@ -182,32 +182,32 @@
     </fragment>
     <fragment
         android:id="@+id/eventInfoFragment"
-        android:name="com.spbstu.application.ui.event_info.EventInfoFragment"
+        android:name="com.brainlux.polyapp.ui.event_info.EventInfoFragment"
         android:label="EventInfoFragment"
         tools:layout="@layout/fragment_event_info" />
     <fragment
         android:id="@+id/enquiryFragment"
-        android:name="com.spbstu.application.ui.enquiry.EnquiryFragment"
+        android:name="com.brainlux.polyapp.ui.enquiry.EnquiryFragment"
         android:label="EnquiryFragment"
         tools:layout="@layout/fragment_enquiry" />
     <fragment
         android:id="@+id/feedbackFragment"
-        android:name="com.spbstu.application.ui.feedback.FeedbackFragment"
+        android:name="com.brainlux.polyapp.ui.feedback.FeedbackFragment"
         android:label="FeedbackFragment"
         tools:layout="@layout/fragment_feedback" />
     <fragment
         android:id="@+id/eatFragment"
-        android:name="com.spbstu.application.ui.eat.EatFragment"
+        android:name="com.brainlux.polyapp.ui.eat.EatFragment"
         android:label="EatFragment"
         tools:layout="@layout/fragment_eat" />
     <fragment
         android:id="@+id/newsInfoFragment"
-        android:name="com.spbstu.application.ui.news_info.NewsInfoFragment"
+        android:name="com.brainlux.polyapp.ui.news_info.NewsInfoFragment"
         android:label="NewsInfoFragment"
         tools:layout="@layout/fragment_news_info" />
     <fragment
         android:id="@+id/groupsFragment"
-        android:name="com.spbstu.application.ui.groups.GroupsFragment"
+        android:name="com.brainlux.polyapp.ui.groups.GroupsFragment"
         android:label="GroupsFragment"
         tools:layout="@layout/fragment_groups">
         <action
@@ -222,7 +222,7 @@
     </fragment>
     <fragment
         android:id="@+id/facultiesFragment"
-        android:name="com.spbstu.application.ui.faculties.FacultiesFragment"
+        android:name="com.brainlux.polyapp.ui.faculties.FacultiesFragment"
         android:label="FacultiesFragment"
         tools:layout="@layout/fragment_faculties">
         <action
