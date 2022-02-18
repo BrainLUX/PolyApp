@@ -20,8 +20,10 @@ fun String.toHtml(): Spanned = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.
 }
 
 fun Context.openLink(link: String) {
-    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
-    startActivity(intent)
+    runCatching {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+        startActivity(intent)
+    }
 }
 
 fun Int.withLeadingZero(): String {

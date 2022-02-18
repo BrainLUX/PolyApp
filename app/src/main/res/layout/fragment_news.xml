@@ -8,10 +8,20 @@
         android:id="@+id/frg_news__layout_toolbar"
         layout="@layout/include_toolbar" />
 
+    <ProgressBar
+        android:id="@+id/frg_news__pb_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/frg_news__mcv_tabs_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:cardBackgroundColor="@color/color_transparent"
         app:cardCornerRadius="@dimen/dp_0"
         app:cardElevation="@dimen/dp_4"
@@ -31,6 +41,7 @@
         android:layout_height="@dimen/dp_0"
         android:orientation="horizontal"
         android:overScrollMode="never"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frg_news__mcv_tabs_holder" />
 </androidx.constraintlayout.widget.ConstraintLayout>

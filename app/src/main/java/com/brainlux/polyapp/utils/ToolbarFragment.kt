@@ -56,10 +56,6 @@ abstract class ToolbarFragment constructor(
             ToolbarType.NEWS -> {
                 with(layoutToolbarBinding) {
                     includeToolbarIvButton.visibility = View.GONE
-                    includeToolbarMcvHolder.updateLayoutParams<ConstraintLayout.LayoutParams> {
-                        height = resources.getDimension(R.dimen.dp_40).toInt()
-                    }
-                    includeToolbarTvTitle.gravity = Gravity.START or Gravity.BOTTOM
                 }
             }
         }
